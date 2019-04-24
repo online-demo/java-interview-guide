@@ -1,12 +1,13 @@
-package com.example.java.interview.guide.chapter1.list;
+package com.example.java.interview.guide.chapter1.list.sequence;
+
+import com.example.java.interview.guide.chapter1.list.List;
 
 /**
  * @Author : zhouguanya
  * @Project : java-interview-guide
- * @Package :  com.example.java.interview.guide.chapter1.list
  * @Date : 2019-04-23 16:25
  * @Version : V1.0
- * @Description :
+ * @Description :  顺序线性表实现
  */
 public class SequenceList implements List {
     /**
@@ -67,7 +68,6 @@ public class SequenceList implements List {
      *
      * @param index         位置
      * @param object        元素
-     * @throws Exception
      */
     @Override
     public void insert(int index, Object object) {
@@ -89,7 +89,6 @@ public class SequenceList implements List {
      * 删除元素
      *
      * @param index 位置
-     * @throws Exception
      */
     @Override
     public void delete(int index) {
@@ -111,7 +110,6 @@ public class SequenceList implements List {
      *
      * @param index 位置
      * @return 元素
-     * @throws Exception
      */
     @Override
     public Object get(int index) {

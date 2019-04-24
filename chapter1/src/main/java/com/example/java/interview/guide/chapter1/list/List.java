@@ -3,7 +3,6 @@ package com.example.java.interview.guide.chapter1.list;
 /**
  * @Author : zhouguanya
  * @Project : java-interview-guide
- * @Package : com.example.java.interview.guide.chapter1.list
  * @Date : 2019-04-23 15:38
  * @Version : V1.0
  * @Description : 线性表
@@ -28,7 +27,6 @@ public interface List {
      *
      * @param index     位置
      * @param object         元素
-     * @throws Exception
      */
     void insert(int index, Object object);
 
@@ -36,7 +34,6 @@ public interface List {
      * 删除元素
      *
      * @param index     位置
-     * @throws Exception
      */
     void delete(int index);
 
@@ -45,7 +42,6 @@ public interface List {
      *
      * @param index     位置
      * @return          元素
-     * @throws Exception
      */
     Object get(int index);
 }

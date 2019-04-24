@@ -1,18 +1,17 @@
-package com.example.java.interview.guide.chapter1.list;
+package com.example.java.interview.guide.chapter1.list.sequence;
 
 /**
  * @Author : zhouguanya
  * @Project : java-interview-guide
- * @Package :  com.example.java.interview.guide.chapter1.list
  * @Date : 2019-04-23 17:29
  * @Version : V1.0
- * @Description : 测试线性表
+ * @Description : 测试顺序线性表
  */
 public class SequenceListDemo {
     public static void main(String[] args) {
         int defaultSize = 15;
         SequenceList sequenceList = new SequenceList(defaultSize);
-        System.out.println("----------向线性表新增元素----------");
+        System.out.println("----------向顺序线性表新增元素----------");
         // 测试insert、get、size方法
         for (int i = 0; i < defaultSize; i++) {
             sequenceList.insert(sequenceList.size(), i);
@@ -21,16 +20,18 @@ public class SequenceListDemo {
             System.out.print(sequenceList.get(i) + " ");
         }
         System.out.println();
-        System.out.println("----------测试线性表已满----------");
+        System.out.println("----------测试顺序线性表已满----------");
         try {
             sequenceList.insert(0, 100);
         } catch (Exception e) {
             e.printStackTrace();
         }
         System.out.println();
-        System.out.println("----------从线性表删除元素----------");
         // 测试delete方法
         sequenceList.delete(0);
+        System.out.println("----------顺序线性表是否为空----------");
+        System.out.println(sequenceList.isEmpty());
+        System.out.println("----------顺序线性表删除元素后----------");
         for (int i = 0; i < sequenceList.size(); i++) {
             System.out.print(sequenceList.get(i) + " ");
         }
