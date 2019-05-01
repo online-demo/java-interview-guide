@@ -97,6 +97,12 @@ public class BinarySearchTree {
         parent.right.parent = parent;
     }
 
+    /**
+     * 从二叉查找树上删除指定元素
+     *
+     * @param value     待删除元素
+     * @return          删除结果
+     */
     public boolean remove(int value) {
         Node temp = find(value);
         if (temp.data != value) {
@@ -121,6 +127,8 @@ public class BinarySearchTree {
             // 维护后继节点的左孩子的关系
             successor.left = temp.left;
             successor.left.parent = successor;
+            successor.right = temp.right;
+            successor.right.parent = successor;
             // 因要把后继节点放在删除的节点位置上，所以需要处理后继节点的子节点
             // 后继节点的有右孩子且后继节点的父节点不是当前删除的节点
             if (successor.right != null && successor.parent != temp) {
@@ -132,6 +140,8 @@ public class BinarySearchTree {
                 successor.right = temp.right;
                 // 后继节点的右孩子的父节点=后继节点
                 successor.right.parent = successor;
+            } else {
+                successor.parent.left = null;
             }
             // 如果删除的是根节点
             if (temp == root) {
@@ -155,7 +165,39 @@ public class BinarySearchTree {
             }
         } else {
             // 删除的节点有一个孩子
-
+            // 删除的节点的右孩子非空
+            if (temp.right != null) {
+                // 如果删除的是根节点
+                if (temp == root) {
+                    root = root.right;
+                    return true;
+                }
+                temp.right.parent = temp.parent;
+                // 删除的是一个左节点
+                if (temp.data < temp.parent.data) {
+                    temp.parent.left = temp.right;
+                } else {
+                    // 删除的是一个右节点
+                    temp.parent.right = temp.right;
+                }
+                return true;
+            } else {
+                // 删除的节点有一个左孩子
+                // 删除的节点是根节点
+                if (temp == root) {
+                    root = temp.left;
+                    return true;
+                }
+                temp.left.parent = temp.parent;
+                // 删除的是一个左节点
+                if (temp.data < temp.parent.data) {
+                    temp.parent.left = temp.left;
+                } else {
+                    // 删除的是一个右节点
+                    temp.parent.right = temp.left;
+                }
+                return true;
+            }
         }
     }
 
@@ -176,5 +218,56 @@ public class BinarySearchTree {
             current = current.left;
         }
         return parent;
+    }
+
+    /**
+     * 获取根节点
+     *
+     * @return  根节点
+     */
+    public Node getRoot() {
+        return root;
+    }
+
+    /**
+     * 中序遍历
+     * 左孩子---->父节点---->右孩子
+     *
+     * @param node  起始节点
+     */
+    public void inOrder(Node node) {
+        if (node != null) {
+            inOrder(node.left);
+            System.out.print(node.data + " ");
+            inOrder(node.right);
+        }
+    }
+
+    /**
+     * 先序遍历
+     * 父节点---->左孩子---->右孩子
+     *
+     * @param node  起始节点
+     */
+    public void preOrder(Node node) {
+        if (node != null) {
+            System.out.print(node.data + " ");
+            preOrder(node.left);
+            preOrder(node.right);
+        }
+    }
+
+    /**
+     * 后序遍历
+     * 左孩子---->右孩子---->父节点
+     *
+     * @param node  起始节点
+     */
+    public void postOrder(Node node) {
+        if (node != null) {
+            postOrder(node.left);
+            postOrder(node.right);
+            System.out.print(node.data + " ");
+        }
     }
 }
