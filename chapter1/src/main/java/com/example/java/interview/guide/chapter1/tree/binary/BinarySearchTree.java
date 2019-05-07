@@ -1,4 +1,4 @@
-package com.example.java.interview.guide.chapter1.tree;
+package com.example.java.interview.guide.chapter1.tree.binary;
 
 /**
  * @Author : zhouguanya
