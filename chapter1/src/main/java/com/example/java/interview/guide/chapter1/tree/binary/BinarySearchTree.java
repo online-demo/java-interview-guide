@@ -155,7 +155,7 @@ public class BinarySearchTree {
      */
     public Node findSuccessor(Node node) {
         if (node.right == null) {
-            return node;
+            return node.parent;
         }
         Node current = node.right;
         Node parent = node.right;

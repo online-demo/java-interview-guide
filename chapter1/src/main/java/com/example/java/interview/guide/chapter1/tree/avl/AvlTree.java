@@ -33,19 +33,24 @@ public class AvlTree {
          * 右子节点
          */
         private Node right;
-
+        /**
+         * 父节点
+         */
+        private Node parent;
         /**
          * 内部类构造器
          *
          * @param key       元素值
          * @param left      左子节点
          * @param right     右子节点
+         * @param parent    父节点
          */
-        Node(int key, Node left, Node right) {
+        Node(int key, Node left, Node right, Node parent) {
             this.key = key;
             this.left = left;
             this.right = right;
             this.height = 0;
+            this.parent = parent;
         }
     }
 
@@ -63,21 +68,24 @@ public class AvlTree {
      */
     public void insert(int key) {
         root = insert(root, key);
+        root.parent = null;
     }
 
     /**
      * 将结点插入到AVL树中，并返回根节点
      *
+     * @param root      父节点
      * @param key       元素值
      * @return          插入结果
      */
     private Node insert(Node root, int key) {
         // 创建节点
         if (root == null) {
-            root = new Node(key, null, null);
+            root = new Node(key, null, null, null);
         } else if (key < root.key) {
             // 插入左子树
             root.left = insert(root.left, key);
+            root.left.parent = root;
             // 二叉树失衡
             if (height(root.left) - height(root.right) == 2) {
                 // 进行LL旋转
@@ -91,6 +99,7 @@ public class AvlTree {
         } else if (key > root.key) {
             // 插入右子树
             root.right = insert(root.right, key);
+            root.right.parent = root;
             // 二叉树失衡
             if (height(root.right) - height(root.left) == 2) {
                 if (key > root.right.key) {
@@ -117,8 +126,12 @@ public class AvlTree {
         Node leftChild = root.left;
         // 失衡AVL树根节点的左子节点 = 失衡AVL树根节点的左子节点的右子节点
         root.left = leftChild.right;
+        if (root.left != null) {
+            root.left.parent = root;
+        }
         // 失衡AVL树根节点的左子节点的右节点 = 原AVL树的根节点
         leftChild.right = root;
+        leftChild.right.parent = leftChild;
         // 调整leftChild的高度 = max(左子树的高度，右子树的高度) + 1
         leftChild.height = max(height(leftChild.left), height(leftChild.right)) + 1;
         // 调整root的高度 = max(左子树的高度，右子树的高度) + 1
@@ -137,8 +150,12 @@ public class AvlTree {
         Node rightChild = root.right;
         // 失衡AVL树根节点的右子节点 = 失衡AVL树根节点的右子节点的左子节点
         root.right = rightChild.left;
+        if (root.right != null) {
+            root.right.parent = root;
+        }
         // 失衡AVL树根节点的右子节点的左节点 = 原AVL树的根节点
         rightChild.left = root;
+        rightChild.left.parent = rightChild;
         // 调整leftChild的高度 = max(左子树的高度，右子树的高度) + 1
         rightChild.height = max(height(rightChild.left), height(rightChild.right)) + 1;
         // 调整root的高度 = max(左子树的高度，右子树的高度) + 1
@@ -253,6 +270,40 @@ public class AvlTree {
             postOrder(parent.left);
             postOrder(parent.right);
             System.out.print(parent.key + " ");
+        }
+    }
+
+    /**
+     * 查找key
+     *
+     * @param key   待查找的key
+     * @return      查找的key
+     */
+    public int search(int key) {
+        Node node = search(root, key);
+        if (node != null) {
+            return node.key;
+        }
+        return -1;
+    }
+
+    /**
+     * 查找AVL树中值为key的节点
+     *
+     * @param root  父节点
+     * @param key   查找的key
+     * @return      查找到的节点
+     */
+    private Node search(Node root, int key) {
+        if (root == null) {
+            return null;
+        }
+        if (key < root.key) {
+            return search(root.left, key);
+        } else if (key > root.key) {
+            return search(root.right, key);
+        } else {
+            return root;
         }
     }
 }

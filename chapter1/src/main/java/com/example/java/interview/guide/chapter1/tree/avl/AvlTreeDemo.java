@@ -18,11 +18,15 @@ public class AvlTreeDemo {
         System.out.println("----------中序遍历AVL树----------");
         avlTree.inOrder();
         System.out.println();
-
         System.out.println("----------先序遍历AVL树----------");
         avlTree.preOrder();
         System.out.println();
         System.out.println("----------后序遍历AVL树----------");
         avlTree.postOrder();
+        System.out.println();
+        System.out.println("--------在AVL树查找元素15--------");
+        System.out.println(avlTree.search(15));
+        System.out.println("--------在AVL树查找元素20--------");
+        System.out.println(avlTree.search(20));
     }
 }
