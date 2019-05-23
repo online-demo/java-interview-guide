@@ -306,4 +306,131 @@ public class AvlTree {
             return root;
         }
     }
+
+    /**
+     * 从二叉查找树上删除指定元素
+     *
+     *
+     * @param value     待删除元素
+     * @return          删除结果
+     */
+    public boolean remove(int value) {
+        Node deleteNode = search(root, value);
+        if (deleteNode == null) {
+            return false;
+        }
+        remove(root, deleteNode);
+        return true;
+    }
+
+    /**
+     * 删除节点
+     *
+     * @param root          父节点
+     * @param deleteNode    待删除节点
+     * @return              删除后的根节点
+     */
+    private Node remove(Node root, Node deleteNode) {
+        if (root == null || deleteNode == null) {
+            return null;
+        }
+        // 待删除节点值 - 父节点值
+        int compare = deleteNode.key - root.key;
+        // 待删除的节点在左子树中
+        if (compare < 0) {
+            root.left = remove(root.left, deleteNode);
+            root.left.parent = root;
+            // 删除节点后，若AVL树失去平衡，则进行相应的调节
+            if (height(root.right) - height(root.left) == 2) {
+                // 右子节点
+                Node rightChild = root.right;
+                if (height(rightChild.left) > height(rightChild.right)) {
+                    // RL旋转
+                    root = rightLeftRotate(root);
+                } else {
+                    // RR旋转
+                    root = rightRightRotate(root);
+                }
+            }
+            // 待删除的节点在右子树中
+        } else if (compare > 0) {
+            root.right = remove(root.right, deleteNode);
+            if (height(root.left) - height(root.right) == 2) {
+                Node leftChild = root.left;
+                if (height(leftChild.left) > height(leftChild.right)) {
+                    // LL旋转
+                    root = leftLeftRotate(root);
+                } else {
+                    // LR旋转
+                    root = leftRightRotate(root);
+                }
+            }
+        } else {
+            //root是当前需要删除的节点
+            if (root.left != null && root.right != null) {
+                // 如果tree的左子树比右子树高，则执行以下：
+                if (height(root.left) > height(root.right)) {
+                    // (01)找出root的左子树中的最大节点
+                    // (02)将该最大节点的值赋值给root
+                    // (03)删除该最大节点
+                    // 采用这种方式的好处是：删除左子树中最大节点之后，AVL树仍然是平衡的
+                    Node max = findMax(root.left);
+                    root.key = max.key;
+                    root.left = remove(root.left, max);
+                    root.left.parent = root;
+                } else {
+                    // 如果tree的右子树比左子树高，则执行以下：
+                    // (01)找出root的右子树中的最小节点
+                    // (02)将该最小节点的值赋值给root
+                    // (03)删除该最小节点
+                    // 采用这种方式的好处是：删除右子树中最小节点之后，AVL树仍然是平衡的
+                    Node min = findMin(root.right);
+                    root.key = min.key;
+                    root.right = remove(root.right, min);
+                    root.right.parent = root;
+                }
+            } else {
+                Node temp = root;
+                root = root.left != null ? root.left : root.right;
+                if (root != null) {
+                    root.parent = root.parent.parent;
+                }
+                temp = null;
+            }
+        }
+        return root;
+    }
+
+    /**
+     * 查找最小结点：返回node为根结点的AVL树的最小结点
+     *
+     * @param node      AVL树的父节点
+     * @return          最小节点
+     */
+    private Node findMin(Node node) {
+        if (node == null) {
+            return null;
+        }
+        while (node.left != null) {
+            node = node.left;
+        }
+        return node;
+    }
+
+    /**
+     * 查找最大结点：返回node为根结点的AVL树的最大结点
+     *
+     * @param node      AVL树父节点
+     * @return          最大节点
+     */
+    private Node findMax(Node node) {
+        if (node == null) {
+            return null;
+        }
+        while (node.right != null) {
+            node = node.right;
+        }
+        return node;
+    }
+
 }

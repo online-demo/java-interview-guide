@@ -15,6 +15,16 @@ public class AvlTreeDemo {
             // 添加元素到AVL树
             avlTree.insert(array[i]);
         }
+        print(avlTree);
+        System.out.println();
+        System.out.println("--------在AVL树查找元素12--------");
+        System.out.println(avlTree.search(12));
+        System.out.println("--------在AVL树查找元素20--------");
+        System.out.println(avlTree.search(20));
+        avlTree.remove(12);
+        print(avlTree);
+    }
+    public static void print(AvlTree avlTree) {
         System.out.println("----------中序遍历AVL树----------");
         avlTree.inOrder();
         System.out.println();
@@ -23,10 +33,5 @@ public class AvlTreeDemo {
         System.out.println();
         System.out.println("----------后序遍历AVL树----------");
         avlTree.postOrder();
-        System.out.println();
-        System.out.println("--------在AVL树查找元素15--------");
-        System.out.println(avlTree.search(15));
-        System.out.println("--------在AVL树查找元素20--------");
-        System.out.println(avlTree.search(20));
     }
 }

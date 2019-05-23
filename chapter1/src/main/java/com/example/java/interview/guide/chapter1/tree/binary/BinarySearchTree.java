@@ -113,7 +113,7 @@ public class BinarySearchTree {
         if (temp.data != value) {
             return false;
         }
-        //首选处理第3种情况，删除的节点同时存在左右子节点
+        //首先处理第3种情况，删除的节点同时存在左右子节点
         if (temp.left != null && temp.right != null) {
             // 待删除节点的后继节点
             Node successor = findSuccessor(temp);
