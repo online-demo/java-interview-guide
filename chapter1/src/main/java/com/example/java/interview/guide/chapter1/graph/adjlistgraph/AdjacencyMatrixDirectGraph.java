@@ -56,6 +56,7 @@ public class AdjacencyMatrixDirectGraph {
      * @param vertexNum     顶点个数
      */
     public AdjacencyMatrixDirectGraph(int[][] data, int vertexNum) {
+        // 遍历表示有向图的二组数组，得到顶点集合
         Set<Integer> set = new HashSet<>();
         for (int[] array : data) {
             for (int value : array) {
