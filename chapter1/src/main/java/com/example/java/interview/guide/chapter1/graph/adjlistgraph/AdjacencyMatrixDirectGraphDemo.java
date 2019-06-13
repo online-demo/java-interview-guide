@@ -9,18 +9,21 @@ package com.example.java.interview.guide.chapter1.graph.adjlistgraph;
  */
 public class AdjacencyMatrixDirectGraphDemo {
     public static void main(String[] args) {
-        int[][] data = {
-                {0,3},
-                {1,0},
-                {1,2},
-                {2,0},
-                {2,1},
-        };
-        AdjacencyMatrixDirectGraph adjDirectGraph = new AdjacencyMatrixDirectGraph(data,4);
-        int vertex = 2;
-        // 获取顶点2的邻接点
-        for(int adjNode : adjDirectGraph.adj(vertex)) {
-            System.out.println("顶点" + vertex + "的邻接点有：" + adjNode);
+        String[] vertexArray = {"A", "B", "C", "D", "E", "F", "G"};
+        String[][] edges = new String[][]{
+                {"A", "C"},
+                {"A", "D"},
+                {"A", "F"},
+                {"B", "C"},
+                {"C", "D"},
+                {"E", "G"},
+                {"F", "G"}};
+        AdjacencyListGraph adjDirectGraph = new AdjacencyListGraph(vertexArray,edges);
+        // 获取每个顶点的邻接点
+        for (String vertex : vertexArray) {
+            for(String adjNode : adjDirectGraph.adj(vertex)) {
+                System.out.println("顶点" + vertex + "的邻接点有：" + adjNode);
+            }
         }
     }
 }
