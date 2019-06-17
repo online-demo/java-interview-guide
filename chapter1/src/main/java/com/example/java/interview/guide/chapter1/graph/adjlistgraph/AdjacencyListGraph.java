@@ -11,6 +11,7 @@ import java.util.Set;
  * @Description : 无向图的邻接表实现
  */
 public class AdjacencyListGraph {
+    public String[] vertexArray;
     /**
      * 邻接点组成的单链表的单个节点
      */
@@ -53,6 +54,7 @@ public class AdjacencyListGraph {
         // 初始化"顶点数"和"边数"
         int vertexArrayLength = vertexArray.length;
         int edgeArrayLength = edgeArray.length;
+        this.vertexArray = vertexArray;
         // 初始化顶点数组 ：数组赋值，边为空
         vertexNodes = new VertexNode[vertexArrayLength];
         for (int i = 0; i < vertexNodes.length; i++) {
