@@ -11,17 +11,22 @@ import com.example.java.interview.guide.chapter1.graph.adjlistgraph.AdjacencyLis
  */
 public class DepthFirstSearchDemo {
     public static void main(String[] args) {
-        String[] vertexArray = {"A", "B", "C", "D", "E", "F", "G"};
+        AdjacencyListGraph adjacencyListGraph = init();
+        DepthFirstSearch depthFirstSearch = new DepthFirstSearch(adjacencyListGraph);
+        depthFirstSearch.dfsPrint("0");
+    }
+    public static AdjacencyListGraph init() {
+        String[] vertexArray = {"0", "1", "2", "3", "4", "5"};
         String[][] edges = new String[][]{
-                {"A", "C"},
-                {"A", "D"},
-                {"A", "F"},
-                {"B", "C"},
-                {"C", "D"},
-                {"E", "G"},
-                {"F", "G"}};
-        AdjacencyListGraph adjDirectGraph = new AdjacencyListGraph(vertexArray,edges);
-        DepthFirstSearch depthFirstSearch = new DepthFirstSearch(adjDirectGraph);
-        depthFirstSearch.dfsPrint(adjDirectGraph, "D");
+                {"0", "1"},
+                {"0", "2"},
+                {"0", "5"},
+                {"1", "2"},
+                {"2", "3"},
+                {"2", "4"},
+                {"3", "4"},
+                {"3", "5"}
+        };
+        return new AdjacencyListGraph(vertexArray,edges);
     }
 }

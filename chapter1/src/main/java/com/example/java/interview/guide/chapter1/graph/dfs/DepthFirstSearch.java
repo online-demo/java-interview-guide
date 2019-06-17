@@ -16,8 +16,7 @@ public class DepthFirstSearch {
     AdjacencyListGraph graph;
     LinkedList<String> list;
     /**
-     * 从顶点index开始遍历
-     * @param graph
+     * 构造器
      */
     public DepthFirstSearch(AdjacencyListGraph graph) {
         // 指定初始容量，此处使用默认容量。具体容量的估算参考HashMap章节
@@ -29,10 +28,9 @@ public class DepthFirstSearch {
     /**
      * 深度优先遍历
      *
-     * @param graph     图
      * @param value     深度优先遍历的起点
      */
-    public void dfsPrint(AdjacencyListGraph graph, String value) {
+    public void dfsPrint(String value) {
         // 已遍历元素标记为true
         visited.put(value, true);
         System.out.print(value + "    ");
@@ -40,7 +38,7 @@ public class DepthFirstSearch {
         for(String adj : graph.adj(value)) {
             if(visited.get(adj) == null || !visited.get(adj)) {
                 // value的每个邻接点递归深度优先遍历
-                dfsPrint(graph, adj);
+                dfsPrint(adj);
             }
         }
     }
