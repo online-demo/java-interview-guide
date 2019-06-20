@@ -46,7 +46,7 @@ public class KruskalMinSubTree {
         for (int i = 0; i < index; i++) {
             sum += resultArray[i].weight;
         }
-        System.out.printf("Kruskal=%d: ", sum);
+        System.out.printf("Kruskal最小生成树=%d: ", sum);
         for (int i = 0; i < index; i++) {
             System.out.printf("(%c,%c) ", resultArray[i].start, resultArray[i].end);
         }
@@ -92,8 +92,11 @@ public class KruskalMinSubTree {
         }
     }
 
-    /*
-     * 返回ch位置
+    /**
+     * 返回顶点的位置
+     * @param ch    顶点
+     * @param graph 图
+     * @return      位置
      */
     private int getPosition(char ch, AdjacencyListWeightGraph graph) {
         for(int i = 0; i<graph.vertexNodes.length; i++) {

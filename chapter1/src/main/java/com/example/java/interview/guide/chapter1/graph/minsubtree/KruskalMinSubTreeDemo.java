@@ -9,6 +9,12 @@ package com.example.java.interview.guide.chapter1.graph.minsubtree;
  */
 public class KruskalMinSubTreeDemo {
     public static void main(String[] args) {
+        AdjacencyListWeightGraph adjacencyListWeightGraph = init();
+        KruskalMinSubTree kruskalMinSubTree = new KruskalMinSubTree();
+        // Kruskal算法生成最小生成树
+        kruskalMinSubTree.minSubTree(adjacencyListWeightGraph);
+    }
+    public static AdjacencyListWeightGraph init() {
         char[] vertexArray = {'A', 'B', 'C', 'D', 'E', 'F', 'G'};
         EdgeData[] edges = {
                 new EdgeData('A', 'B', 12),
@@ -24,9 +30,6 @@ public class KruskalMinSubTreeDemo {
                 new EdgeData('E', 'G',  8),
                 new EdgeData('F', 'G',  9),
         };
-        AdjacencyListWeightGraph adjacencyListWeightGraph = new AdjacencyListWeightGraph(vertexArray, edges);
-        KruskalMinSubTree kruskalMinSubTree = new KruskalMinSubTree();
-        // Kruskal算法生成最小生成树
-        kruskalMinSubTree.minSubTree(adjacencyListWeightGraph);
+        return new AdjacencyListWeightGraph(vertexArray, edges);
     }
 }
