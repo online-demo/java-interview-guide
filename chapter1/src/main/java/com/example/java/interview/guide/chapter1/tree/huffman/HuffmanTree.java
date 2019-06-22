@@ -12,15 +12,15 @@ import java.util.List;
  */
 public class HuffmanTree {
     /**
-     * 根节点
+     * 根结点
      */
     public Node root;
     /**
-     * 哈夫曼树节点
+     * 哈夫曼树结点
      */
     public class Node implements Comparable{
         /**
-         * 节点的权重
+         * 结点的权重
          */
         public int weight;
         /**
@@ -32,7 +32,7 @@ public class HuffmanTree {
          */
         public Node right;
         /**
-         * 父节点
+         * 父结点
          */
         public Node parent;
 
@@ -68,10 +68,10 @@ public class HuffmanTree {
     }
 
     /**
-     * 创建Node节点
+     * 创建Node结点
      *
      * @param weight    权重
-     * @return          节点
+     * @return          结点
      */
     public Node createNode(int weight) {
         return new Node(weight);
@@ -80,7 +80,7 @@ public class HuffmanTree {
     /**
      * 创建哈夫曼树
      *
-     * @param nodeList      节点集合
+     * @param nodeList      结点集合
      */
     public void createHuffmanTree(List<Node> nodeList) {
         if (nodeList == null || nodeList.isEmpty()) {
@@ -103,7 +103,7 @@ public class HuffmanTree {
     /**
      * 中序遍历
      *
-     * @param parent    父节点
+     * @param parent    父结点
      */
     public void inOrder(Node parent) {
         if (parent != null) {
@@ -116,11 +116,11 @@ public class HuffmanTree {
     /**
      * 哈夫曼编码
      *
-     * @param parent    节点
+     * @param parent    结点
      * @param code      编码
      */
     public void huffmanEncode(Node parent, String code) {
-        // 叶子节点
+        // 叶子结点
         if (parent != null && parent.left == null && parent.right == null) {
             System.out.println(parent.weight + "被编码成" + code);
         }

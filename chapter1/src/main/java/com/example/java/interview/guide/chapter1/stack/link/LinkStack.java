@@ -26,15 +26,15 @@ public class LinkStack implements Stack {
     }
 
     /**
-     * 定义一个内部类Node，代表链式栈的节点
+     * 定义一个内部类Node，代表链式栈的结点
      */
     private class Node {
         /**
-         * 保存链式栈的节点数据
+         * 保存链式栈的结点数据
          */
         private Object data;
         /**
-         * 指向下个节点的引用
+         * 指向下个结点的引用
          */
         private Node next;
         /**
@@ -46,8 +46,8 @@ public class LinkStack implements Stack {
         /**
          * Node有参构造器
          *
-         * @param element       链式栈节点数据
-         * @param next          链式栈下一个节点指针
+         * @param element       链式栈结点数据
+         * @param next          链式栈下一个结点指针
          */
         public Node(Object element, Node next) {
             this.data = element;
@@ -76,9 +76,9 @@ public class LinkStack implements Stack {
         if (element == null) {
             throw new NullPointerException("入栈元素为空");
         }
-        // 创建新Node节点，新节点指向原top节点
+        // 创建新Node结点，新结点指向原top结点
         Node node = new Node(element, top);
-        // 修改top节点指向
+        // 修改top结点指向
         top = node;
         size++;
         return true;
@@ -96,7 +96,7 @@ public class LinkStack implements Stack {
         }
         // 当前栈顶元素
         Object element = top.data;
-        // 修改栈顶元素为原栈顶元素的下一个节点
+        // 修改栈顶元素为原栈顶元素的下一个结点
         top = top.next;
         size--;
         return element;

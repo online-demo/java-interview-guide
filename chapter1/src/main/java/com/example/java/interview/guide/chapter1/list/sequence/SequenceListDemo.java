@@ -9,11 +9,14 @@ package com.example.java.interview.guide.chapter1.list.sequence;
  */
 public class SequenceListDemo {
     public static void main(String[] args) {
-        int defaultSize = 15;
-        SequenceList sequenceList = new SequenceList(defaultSize);
+        /**
+         * 线性表最大容量
+         */
+        int maxSize = 15;
+        SequenceList sequenceList = new SequenceList(maxSize);
         System.out.println("----------向顺序线性表新增元素----------");
         // 测试insert、get、size方法
-        for (int i = 0; i < defaultSize; i++) {
+        for (int i = 0; i < maxSize; i++) {
             sequenceList.insert(sequenceList.size(), i);
         }
         for (int i = 0; i < sequenceList.size(); i++) {
