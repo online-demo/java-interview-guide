@@ -7,7 +7,7 @@ import com.example.java.interview.guide.chapter1.queue.Queue;
  * @Project : java-interview-guide
  * @Date : 2019-04-28 19:24
  * @Version : V1.0
- * @Description :   队列链式存储
+ * @Description : 链式队列
  */
 public class LinkQueue implements Queue {
     /**

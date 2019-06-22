@@ -5,7 +5,7 @@ package com.example.java.interview.guide.chapter1.stack.link;
  * @Project : java-interview-guide
  * @Date : 2019-04-25 17:46
  * @Version : V1.0
- * @Description :   测试链式栈
+ * @Description : 测试链式栈
  */
 public class LinkStackDemo {
     public static void main(String[] args) {

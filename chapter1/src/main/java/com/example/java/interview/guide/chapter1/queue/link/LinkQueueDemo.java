@@ -5,7 +5,7 @@ package com.example.java.interview.guide.chapter1.queue.link;
  * @Project : java-interview-guide
  * @Date : 2019-04-28 20:07
  * @Version : V1.0
- * @Description :   队列链式存储测试
+ * @Description : 测试链式队列
  */
 public class LinkQueueDemo {
     public static void main(String[] args) {
@@ -20,7 +20,7 @@ public class LinkQueueDemo {
         System.out.println("----------队列元素个数----------");
         System.out.println(linkQueue.size());
         System.out.println("----------打印队列元素----------");
-        // 出队
+        // 依次出队
         for (int i = 0; i < initialCapacity; i++) {
             System.out.print(linkQueue.take() + " ");
         }

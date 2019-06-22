@@ -7,7 +7,7 @@ import com.example.java.interview.guide.chapter1.queue.Queue;
  * @Project : java-interview-guide
  * @Date : 2019-04-28 16:14
  * @Version : V1.0
- * @Description :   队列线性存储
+ * @Description : 顺序队列的实现
  */
 public class SequenceQueue implements Queue {
     /**

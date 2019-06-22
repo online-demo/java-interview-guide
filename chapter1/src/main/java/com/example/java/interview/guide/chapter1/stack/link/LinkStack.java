@@ -7,7 +7,7 @@ import com.example.java.interview.guide.chapter1.stack.Stack;
  * @Project : java-interview-guide
  * @Date : 2019-04-25 16:34
  * @Version : V1.0
- * @Description :   链式栈
+ * @Description : 链式栈
  */
 public class LinkStack implements Stack {
     /**
