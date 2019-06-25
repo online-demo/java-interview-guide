@@ -5,13 +5,13 @@ package com.example.java.interview.guide.chapter1.queue.sequence;
  * @Project : java-interview-guide
  * @Date : 2019-04-28 17:58
  * @Version : V1.0
- * @Description :   测试队列
+ * @Description : 测试顺序队列
  */
 public class SequenceQueueDemo {
     public static void main(String[] args) {
         int initialCapacity = 10;
         SequenceQueue sequenceQueue = new SequenceQueue(initialCapacity);
-        // 入栈
+        // 入队
         for (int i = 0; i < initialCapacity; i++) {
             sequenceQueue.add(i);
         }

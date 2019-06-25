@@ -1,4 +1,4 @@
-package com.example.java.interview.guide.chapter1.graph.directgraph;
+package com.example.java.interview.guide.chapter1.graph.adjmatrixgraph;
 
 import java.util.Set;
 

@@ -7,7 +7,7 @@ import com.example.java.interview.guide.chapter1.queue.Queue;
  * @Project : java-interview-guide
  * @Date : 2019-04-28 19:24
  * @Version : V1.0
- * @Description :   队列链式存储
+ * @Description : 链式队列
  */
 public class LinkQueue implements Queue {
     /**
@@ -30,15 +30,15 @@ public class LinkQueue implements Queue {
     }
 
     /**
-     * 定义一个内部类Node，代表队列的节点
+     * 定义一个内部类Node，代表队列的结点
      */
     private class Node {
         /**
-         * 保存队列的节点数据
+         * 保存队列的结点数据
          */
         private Object data;
         /**
-         * 指向下个节点的引用
+         * 指向下个结点的引用
          */
         private Node next;
         /**
@@ -50,8 +50,8 @@ public class LinkQueue implements Queue {
         /**
          * Node有参构造器
          *
-         * @param element       队列节点数据
-         * @param next          队列下一个节点指针
+         * @param element       队列结点数据
+         * @param next          队列下一个结点指针
          */
         public Node(Object element, Node next) {
             this.data = element;
