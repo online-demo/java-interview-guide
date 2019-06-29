@@ -5,7 +5,7 @@ package com.example.java.interview.guide.chapter1.tree.binary;
  * @Project : java-interview-guide
  * @Date : 2019-04-30 11:04
  * @Version : V1.0
- * @Description :   二叉查找树实现
+ * @Description : 二叉排序树实现
  */
 public class BinarySearchTree {
     private class Node {
@@ -113,7 +113,7 @@ public class BinarySearchTree {
         if (temp.data != value) {
             return false;
         }
-        //首先处理第3种情况，删除的结点同时存在左右子结点
+        //首先处理第3种情况，删除的结点同时存在左右子树
         if (temp.left != null && temp.right != null) {
             // 待删除结点的后继结点
             Node successor = findSuccessor(temp);
