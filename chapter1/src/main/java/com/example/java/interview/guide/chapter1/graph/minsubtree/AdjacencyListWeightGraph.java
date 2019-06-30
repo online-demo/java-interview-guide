@@ -10,7 +10,7 @@ package com.example.java.interview.guide.chapter1.graph.minsubtree;
  */
 public class AdjacencyListWeightGraph {
     /**
-     * 邻接表中链表节点
+     * 邻接表中链表结点
      */
     class EdgeNode {
         /**
@@ -105,7 +105,7 @@ public class AdjacencyListWeightGraph {
     }
 
     /**
-     * 将node节点链接到list的最后
+     * 将node结点链接到list的最后
      *
      * 在链表尾部添加元素（与无向图邻接表在链表头部添加元素形成对比）
      */
@@ -118,8 +118,8 @@ public class AdjacencyListWeightGraph {
     }
 
     /**
-     * 返回节点位置
-     * @param ch        待查节点
+     * 返回结点位置
+     * @param ch        待查结点
      * @return          位置信息
      */
     private int getPosition(char ch) {

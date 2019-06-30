@@ -115,7 +115,7 @@ public class KruskalMinSubTree {
      */
     private int getEnd(int[] vertexEndArray, int position) {
         while (vertexEndArray[position] != 0) {
-            // position节点所在的边的终点的position
+            // position结点所在的边的终点的position
             position = vertexEndArray[position];
         }
         return position;

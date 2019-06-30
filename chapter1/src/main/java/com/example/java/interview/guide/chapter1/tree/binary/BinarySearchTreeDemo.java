@@ -5,7 +5,7 @@ package com.example.java.interview.guide.chapter1.tree.binary;
  * @Project : java-interview-guide
  * @Date : 2019-05-01 14:26
  * @Version : V1.0
- * @Description :   测试二分查找树
+ * @Description : 测试二叉排序树
  */
 public class BinarySearchTreeDemo {
     public static void main(String[] args) {

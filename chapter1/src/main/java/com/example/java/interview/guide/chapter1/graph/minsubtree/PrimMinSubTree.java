@@ -47,7 +47,7 @@ public class PrimMinSubTree {
             min = INF;
             // 在未被加入到最小生成树的顶点中，找出权值最小的顶点。
             while (j < num) {
-                // 若weights[j]=0，意味着"第j个节点已经被排序过"(或者说已经加入了最小生成树中)。
+                // 若weights[j]=0，意味着"第j个结点已经被排序过"(或者说已经加入了最小生成树中)。
                 if (weights[j] != 0 && weights[j] < min) {
                     min = weights[j];
                     k = j;
@@ -65,7 +65,7 @@ public class PrimMinSubTree {
                 // 获取第k个顶点到第j个顶点的权值
                 tmp = getWeight(k, j, graph);
                 // 更新第k个顶点到各个顶点的权重，重新赋值weights数组
-                // 当第j个节点没有被处理，并且需要更新时才被更新
+                // 当第j个结点没有被处理，并且需要更新时才被更新
                 if (weights[j] != 0 && tmp < weights[j]) {
                     weights[j] = tmp;
                 }
@@ -99,8 +99,8 @@ public class PrimMinSubTree {
     /**
      * 获取边<start, end>的权值；若start和end不是连通的，则返回无穷大。
      *
-     * @param start 起始节点
-     * @param end   结束节点
+     * @param start 起始结点
+     * @param end   结束结点
      * @param graph 带权图
      * @return 权重
      */

@@ -13,7 +13,7 @@ import java.util.Set;
 public class AdjacencyListGraph {
     public String[] vertexArray;
     /**
-     * 邻接点组成的单链表的单个节点
+     * 邻接点组成的单链表的单个结点
      */
     private class EdgeNode {
         /**
@@ -65,13 +65,13 @@ public class AdjacencyListGraph {
 
         // 初始化边关系
         for (int i = 0; i < edgeArrayLength; i++) {
-            // 获取边的头节点和尾节点
+            // 获取边的头结点和尾结点
             String head = edgeArray[i][0];
             String tail = edgeArray[i][1];
-            // 查询边的头结点和尾节点在顶点数组的位置
+            // 查询边的头结点和尾结点在顶点数组的位置
             int headPosition = getPosition(head);
             int tailPosition = getPosition(tail);
-            // 将node1链接到"head节点指向的链表的头部"
+            // 将node1链接到"head结点指向的链表的头部"
             EdgeNode node1 = new EdgeNode();
             node1.index = tailPosition;
             if (vertexNodes[headPosition].firstEdge == null) {
@@ -79,7 +79,7 @@ public class AdjacencyListGraph {
             } else {
                 addFirst(vertexNodes[headPosition], node1);
             }
-            // 将node2链接到"tail节点指向的链表的头部"
+            // 将node2链接到"tail结点指向的链表的头部"
             EdgeNode node2 = new EdgeNode();
             node2.index = headPosition;
             if (vertexNodes[tailPosition].firstEdge == null) {
@@ -91,7 +91,7 @@ public class AdjacencyListGraph {
     }
 
     /**
-     * 向链表头部添加节点
+     * 向链表头部添加结点
      *
      * @param vertexNode
      * @param node
