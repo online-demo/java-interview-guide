@@ -20,18 +20,18 @@ public class BinarySearchTreeDemo {
         binarySearchTree.put(1);
         binarySearchTree.put(4);
         binarySearchTree.put(7);
-        System.out.println("----------二分查找树中序遍历结果----------");
+        System.out.println("----------二叉排序树中序遍历结果----------");
         binarySearchTree.inOrder(binarySearchTree.getRoot());
         System.out.println();
-        System.out.println("----------二分查找树先序遍历结果----------");
+        System.out.println("----------二叉排序树先序遍历结果----------");
         binarySearchTree.preOrder(binarySearchTree.getRoot());
         System.out.println();
-        System.out.println("----------二分查找树后序遍历结果----------");
+        System.out.println("----------二叉排序树后序遍历结果----------");
         binarySearchTree.postOrder(binarySearchTree.getRoot());
         System.out.println();
         // 删除元素8
         binarySearchTree.remove(8);
-        System.out.println("----------二分查找树删除元素8后中序遍历结果----------");
+        System.out.println("-----二叉排序树删除元素8后中序遍历结果------");
         binarySearchTree.inOrder(binarySearchTree.getRoot());
     }
 }
