@@ -5,7 +5,7 @@ package com.example.java.interview.guide.chapter1.tree.avl;
  * @Project : java-interview-guide
  * @Date : 2019-05-05 20:33
  * @Version : V1.0
- * @Description :   AVL树实现
+ * @Description : AVL树实现
  */
 public class AvlTree {
     /**
@@ -116,7 +116,7 @@ public class AvlTree {
     }
 
     /**
-     * LL旋转(右旋)
+     * LL旋转(右旋转)
      *
      * @param root    失衡AVL树根结点
      * @return        调整后的AVL树根结点
@@ -140,7 +140,7 @@ public class AvlTree {
     }
 
     /**
-     * RR旋转(左旋)
+     * RR旋转(左旋转)
      *
      * @param root    失衡AVL树根结点
      * @return        调整后的AVL树根结点
@@ -164,7 +164,7 @@ public class AvlTree {
     }
 
     /**
-     * LR旋转(左右旋)
+     * LR旋转(左右旋转)
      *
      * @param root    失衡AVL树根结点
      * @return        调整后的AVL树根结点
@@ -177,7 +177,7 @@ public class AvlTree {
     }
 
     /**
-     * RL旋转(右左旋)
+     * RL旋转(右左旋转)
      *
      * @param root    失衡AVL树根结点
      * @return        调整后的AVL树根结点

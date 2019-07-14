@@ -10,7 +10,7 @@ package com.example.java.interview.guide.chapter1.tree.avl;
 public class AvlTreeDemo {
     public static void main(String[] args) {
         AvlTree avlTree = new AvlTree();
-        int array[] = { 3,2,1,4,5,6,7,16,15,14,13,12,11,10,8,9 };
+        int[]array = { 3,2,1,4,5,6,7,16,15,14,13,12,11,10,8,9 };
         for (int i = 0; i < array.length; i++) {
             // 添加元素到AVL树
             avlTree.insert(array[i]);
@@ -21,7 +21,9 @@ public class AvlTreeDemo {
         System.out.println(avlTree.search(12));
         System.out.println("--------在AVL树查找元素20--------");
         System.out.println(avlTree.search(20));
+        System.out.println("--------在AVL树删除元素12--------");
         avlTree.remove(12);
+        System.out.println("--------删除元素12后遍历AVL树--------");
         print(avlTree);
     }
     public static void print(AvlTree avlTree) {

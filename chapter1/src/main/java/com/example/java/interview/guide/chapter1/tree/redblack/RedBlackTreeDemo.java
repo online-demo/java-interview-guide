@@ -9,10 +9,10 @@ package com.example.java.interview.guide.chapter1.tree.redblack;
  */
 public class RedBlackTreeDemo {
     public static void main(String[] args) {
-        int a[] = {10, 40, 30, 60, 90, 70, 20, 50, 80};
+        int[] array = {10, 40, 30, 60, 70, 20, 50, 5, 0};
         RedBlackTree redBlackTree = new RedBlackTree();
-        for (int i = 0; i < a.length; i++) {
-            redBlackTree.insert(a[i]);
+        for (int i = 0; i < array.length; i++) {
+            redBlackTree.insert(array[i]);
         }
         System.out.println("----------红黑树中序遍历结果----------");
         redBlackTree.inOrder();

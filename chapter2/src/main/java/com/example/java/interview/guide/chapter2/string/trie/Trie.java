@@ -12,7 +12,7 @@ import java.util.Map;
  */
 public class Trie {
     /**
-     * 节点
+     * 结点
      */
     static class Node {
         /**
@@ -20,13 +20,13 @@ public class Trie {
          */
         boolean isEnd;
         /**
-         * 该节点的子节点
+         * 该结点的子结点
          */
         Map<Character, Node> children = new HashMap<>();
     }
 
     /**
-     * 根节点
+     * 根结点
      */
     private Node root;
 
@@ -49,10 +49,10 @@ public class Trie {
             char character = word.charAt(i);
             // 子孩子包含这个字符
             if (!cur.children.containsKey(character)) {
-                // 如果当前节点中的子节点中不包含当前字符，新建一个子节点
+                // 如果当前结点中的子结点中不包含当前字符，新建一个子结点
                 cur.children.put(character, new Node());
             }
-            // 指向节点的下一个节点
+            // 指向结点的下一个结点
             cur = cur.children.get(character);
         }
         cur.isEnd = true;

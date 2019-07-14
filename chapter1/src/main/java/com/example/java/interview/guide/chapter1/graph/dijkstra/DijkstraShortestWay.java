@@ -11,7 +11,7 @@ public class DijkstraShortestWay {
     private static int INF = Integer.MAX_VALUE;
 
     /**
-     * 邻接表中表对应的链表的节点
+     * 邻接表中表对应的链表的结点
      */
     private class ENode {
         /**
@@ -124,7 +124,7 @@ public class DijkstraShortestWay {
         }
     }
     /**
-     * 将node节点链接到list的最后
+     * 将node结点链接到list的最后
      */
     private void linkLast(ENode list, ENode node) {
         ENode p = list;

@@ -82,7 +82,7 @@ public class RedBlackTree {
         Node parent = null;
         // 父结点和子结点key值大小比较值
         int compare;
-        // step 1. 将红黑树当作一颗二叉查找树，将结点添加到二叉查找树中。
+        // step 1. 将红黑树当作一颗二叉查找树，将结点添加到二叉查找树中
         while (temp != null) {
             parent = temp;
             // 子结点key - 父结点key
@@ -99,6 +99,7 @@ public class RedBlackTree {
                 return;
             }
         }
+        // 找到了带插入结点的位置：parent结点
         // 待插入结点的父结点 = parent
         node.parent = parent;
         if (parent != null) {
@@ -112,7 +113,7 @@ public class RedBlackTree {
                 parent.right = node;
             }
         } else {
-            // 红黑树不存在
+            // parent == null，即红黑树不存在
             root = node;
         }
         // step 2. 设置插入的结点的颜色为红色
@@ -131,7 +132,8 @@ public class RedBlackTree {
         Node parent;
         // node祖父结点
         Node grandParent;
-        // 父结点存在 && 父结点的颜色是红色
+        // 父结点是黑色的情况下不需要调整
+        // 父结点存在 && 父结点的颜色是红色——此时需要调整红黑树
         while (((parent = parentOf(node)) != null) && isRed(parent)) {
             // 祖父结点
             grandParent = parentOf(parent);
@@ -159,7 +161,7 @@ public class RedBlackTree {
                 if (node == parent.right) {
                     // 父结点
                     Node temp = parent;
-                    // 左旋
+                    // 左旋转
                     leftRotate(parent);
                     // 交换parent和node
                     parent = node;
@@ -203,7 +205,7 @@ public class RedBlackTree {
     }
 
     /**
-     * 红黑树右旋
+     * 红黑树右旋转
      *
      * @param node      结点
      */
@@ -239,7 +241,7 @@ public class RedBlackTree {
     }
 
     /**
-     * 红黑树左旋
+     * 红黑树左旋转
      *
      * @param node      结点
      */
@@ -329,7 +331,8 @@ public class RedBlackTree {
     private void inOrder(Node node) {
         if (node != null) {
             inOrder(node.left);
-            System.out.print(node.key + " ");
+            System.out.print(node.key + ":" +
+                    (node.color == RED ? "红色" : "黑色") + "  ");
             inOrder(node.right);
         }
     }
@@ -358,13 +361,13 @@ public class RedBlackTree {
         Node child;
         Node parent;
         int color;
-        // 被删除结点有左右两个孩子
+        // 被删除结点有左右两个子节点
         if (node.left != null && node.right != null) {
             // 被删除结点的后继结点
             // 用后继结点取代删除的结点，然后去除删除的结点
             // 后继结点是右子树中最左边的结点
             Node replace = node;
-            // 获取后继结点
+            // 下面是搜索node结点的后继结点
             replace = replace.right;
             while (replace.left != null) {
                 replace = replace.left;
@@ -453,7 +456,7 @@ public class RedBlackTree {
         while ((node == null || isBlack(node)) && node != root) {
             // node是父结点的一个左孩子
             if (parent.left == node) {
-                // 兄弟结点=父结点的左孩子
+                // 兄弟结点=父结点的右孩子
                 other = parent.right;
                 if (isRed(other)) {
                     // case 1 : 兄弟结点是红色
@@ -486,7 +489,7 @@ public class RedBlackTree {
                     break;
                 }
             } else {
-                // 兄弟结点=父结点的右孩子
+                // 兄弟结点=父结点的左孩子
                 other = parent.left;
                 if (isRed(other)) {
                     // case 1 : 兄弟结点是红色
