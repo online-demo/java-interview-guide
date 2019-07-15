@@ -11,12 +11,12 @@ package com.example.java.interview.guide.chapter2.array.matrixsearch;
 public class SearchTwoDimensionalMatrix {
     /**
      * 搜索二维矩阵是否含有某个元素
-     *
+     * <p>
      * 二分查找法搜索矩阵的每一行
      *
-     * @param matrix    二维矩阵
-     * @param element   元素
-     * @return          结果
+     * @param matrix  二维矩阵
+     * @param element 元素
+     * @return 结果
      */
     public boolean contains(int[][] matrix, int element) {
         // 矩阵合法性校验
@@ -62,9 +62,9 @@ public class SearchTwoDimensionalMatrix {
      * 若左下角元素小于目标元素，则目标元素不可能存在于当前矩阵的第一列，问题规模可以减小第一列
      * 依次减小问题的规模
      *
-     * @param matrix        二维矩阵
-     * @param element       元素
-     * @return              结果
+     * @param matrix  二维矩阵
+     * @param element 元素
+     * @return 结果
      */
     public boolean search(int[][] matrix, int element) {
         // 矩阵合法性校验
