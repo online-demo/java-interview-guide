@@ -14,7 +14,7 @@ public class ExceptSelfProduct {
      * @param source 原数组
      * @return 目标数组
      */
-    public int[] product(int[] source) {
+    public int[] product1(int[] source) {
         // 原数组大小
         int size = source.length;
         // 从左向右的乘积数组
@@ -39,6 +39,30 @@ public class ExceptSelfProduct {
         for (int i = 0; i < size; i++) {
             // result[i] = 左边元素的乘积 * 右边元素的乘积
             result[i] = left[i] * right[i];
+        }
+        return result;
+    }
+
+    /**
+     * 返回除自身以外数组的乘积数组
+     * 常数空间复杂度
+     *
+     * @param source 原数组
+     * @return 目标数组
+     */
+    public int[] product2(int[] source) {
+        int size = source.length;
+        int left = 1;
+        int right = 1;
+        int[] result = new int[size];
+        for (int i = 0; i < size; i++) {
+            result[i] = 1;
+        }
+        for (int i = 0; i < source.length; i++) {
+            result[i] *= left;
+            result[size - i - 1] *= right;
+            left *= source[i];
+            right *= source[size - i - 1];
         }
         return result;
     }
