@@ -10,6 +10,7 @@ package com.example.java.interview.guide.chapter2.sort.bubble;
 public class BubbleSort {
 
     public void sort(int[] source) {
+        // 数组非空校验
         if (source == null || source.length == 0) {
             return;
         }
