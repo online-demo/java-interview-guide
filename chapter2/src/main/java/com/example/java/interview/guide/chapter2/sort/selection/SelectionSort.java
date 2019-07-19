@@ -8,6 +8,11 @@ package com.example.java.interview.guide.chapter2.sort.selection;
  * @Description : 选择排序
  */
 public class SelectionSort {
+    /**
+     * 排序方法
+     *
+     * @param source 原数组
+     */
     public void sort(int[] source) {
         // 数组非空校验
         if (source == null || source.length == 0) {
