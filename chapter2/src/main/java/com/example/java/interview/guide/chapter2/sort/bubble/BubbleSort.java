@@ -15,7 +15,7 @@ public class BubbleSort {
      */
     public void sort(int[] source) {
         // 数组非空校验
-        if (source == null || source.length == 0) {
+        if (source == null || source.length < 2) {
             return;
         }
         // 表示调整的次数  一共需要 source.length - 1次

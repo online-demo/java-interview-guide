@@ -15,7 +15,7 @@ public class ShellSort {
      */
     public void sort(int[] source) {
         // 数组非空校验
-        if (source == null || source.length == 0) {
+        if (source == null || source.length < 2) {
             return;
         }
         // 数组长度

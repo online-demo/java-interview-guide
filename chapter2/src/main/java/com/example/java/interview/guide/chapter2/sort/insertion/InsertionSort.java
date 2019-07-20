@@ -15,7 +15,7 @@ public class InsertionSort {
      */
     public void sort(int[] source) {
         // 数组非空校验
-        if (source == null || source.length == 0) {
+        if (source == null || source.length < 2) {
             return;
         }
         for (int i = 0; i < source.length - 1; i++) {
