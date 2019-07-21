@@ -8,15 +8,15 @@ import java.util.List;
  * @Project : java-interview-guide
  * @Date : 2019-05-24 14:54
  * @Version : V1.0
- * @Description :
+ * @Description : 测试哈夫曼树实现
  */
 public class HuffmanTreeDemo {
     public static void main(String[] args) {
         HuffmanTree huffmanTree = new HuffmanTree();
-        int a[] = { 4,3,5,1,2 };
+        int[] wightArray = {4, 3, 5, 1, 2};
         List<HuffmanTree.Node> nodeList = new ArrayList<>();
-        for (int i = 0; i < a.length; i++) {
-            nodeList.add(huffmanTree.createNode(a[i]));
+        for (int i = 0; i < wightArray.length; i++) {
+            nodeList.add(huffmanTree.createNode(wightArray[i]));
         }
         huffmanTree.createHuffmanTree(nodeList);
         System.out.println("----------哈夫树中序遍历----------");
