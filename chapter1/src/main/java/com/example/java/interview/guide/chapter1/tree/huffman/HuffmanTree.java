@@ -15,63 +15,12 @@ public class HuffmanTree {
      * 根结点
      */
     public Node root;
-    /**
-     * 哈夫曼树结点
-     */
-    public class Node implements Comparable{
-        /**
-         * 结点的权重
-         */
-        public int weight;
-        /**
-         * 左孩子
-         */
-        public Node left;
-        /**
-         * 右孩子
-         */
-        public Node right;
-        /**
-         * 父结点
-         */
-        public Node parent;
-
-        /**
-         * 构造器
-         * @param weight
-         */
-        public Node(int weight) {
-            this(weight, null, null, null);
-        }
-
-        /**
-         * 构造器
-         * @param weight
-         * @param left
-         * @param right
-         * @param parent
-         */
-        public Node(int weight, Node left, Node right, Node parent) {
-            this.weight = weight;
-            this.left = left;
-            this.right = right;
-            this.parent = parent;
-        }
-
-        @Override
-        public int compareTo(Object o) {
-            if (o instanceof Node) {
-                return ((Node) o).weight - this.weight;
-            }
-            return 0;
-        }
-    }
 
     /**
      * 创建Node结点
      *
-     * @param weight    权重
-     * @return          结点
+     * @param weight 权重
+     * @return 结点
      */
     public Node createNode(int weight) {
         return new Node(weight);
@@ -80,7 +29,7 @@ public class HuffmanTree {
     /**
      * 创建哈夫曼树
      *
-     * @param nodeList      结点集合
+     * @param nodeList 结点集合
      */
     public void createHuffmanTree(List<Node> nodeList) {
         if (nodeList == null || nodeList.isEmpty()) {
@@ -103,7 +52,7 @@ public class HuffmanTree {
     /**
      * 中序遍历
      *
-     * @param parent    父结点
+     * @param parent 父结点
      */
     public void inOrder(Node parent) {
         if (parent != null) {
@@ -116,8 +65,8 @@ public class HuffmanTree {
     /**
      * 哈夫曼编码
      *
-     * @param parent    结点
-     * @param code      编码
+     * @param parent 结点
+     * @param code   编码
      */
     public void huffmanEncode(Node parent, String code) {
         // 叶子结点
@@ -139,6 +88,60 @@ public class HuffmanTree {
             huffmanEncode(parent.right, code);
             // 删除上一步添加的'1'
             code = code.substring(0, code.length() - 1);
+        }
+    }
+
+    /**
+     * 哈夫曼树结点
+     */
+    public class Node implements Comparable {
+        /**
+         * 结点的权重
+         */
+        public int weight;
+        /**
+         * 左孩子
+         */
+        public Node left;
+        /**
+         * 右孩子
+         */
+        public Node right;
+        /**
+         * 父结点
+         */
+        public Node parent;
+
+        /**
+         * 构造器
+         *
+         * @param weight
+         */
+        public Node(int weight) {
+            this(weight, null, null, null);
+        }
+
+        /**
+         * 构造器
+         *
+         * @param weight
+         * @param left
+         * @param right
+         * @param parent
+         */
+        public Node(int weight, Node left, Node right, Node parent) {
+            this.weight = weight;
+            this.left = left;
+            this.right = right;
+            this.parent = parent;
+        }
+
+        @Override
+        public int compareTo(Object o) {
+            if (o instanceof Node) {
+                return ((Node) o).weight - this.weight;
+            }
+            return 0;
         }
     }
 }
