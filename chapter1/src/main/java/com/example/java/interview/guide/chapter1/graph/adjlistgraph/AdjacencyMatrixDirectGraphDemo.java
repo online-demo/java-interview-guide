@@ -9,7 +9,9 @@ package com.example.java.interview.guide.chapter1.graph.adjlistgraph;
  */
 public class AdjacencyMatrixDirectGraphDemo {
     public static void main(String[] args) {
+        // 顶点数组
         String[] vertexArray = {"A", "B", "C", "D", "E", "F", "G"};
+        // 边关系
         String[][] edges = new String[][]{
                 {"A", "C"},
                 {"A", "D"},
@@ -18,10 +20,10 @@ public class AdjacencyMatrixDirectGraphDemo {
                 {"C", "D"},
                 {"E", "G"},
                 {"F", "G"}};
-        AdjacencyListGraph adjDirectGraph = new AdjacencyListGraph(vertexArray,edges);
+        AdjacencyListGraph adjDirectGraph = new AdjacencyListGraph(vertexArray, edges);
         // 获取每个顶点的邻接点
         for (String vertex : vertexArray) {
-            for(String adjNode : adjDirectGraph.adj(vertex)) {
+            for (String adjNode : adjDirectGraph.adj(vertex)) {
                 System.out.println("顶点" + vertex + "的邻接点有：" + adjNode);
             }
         }
