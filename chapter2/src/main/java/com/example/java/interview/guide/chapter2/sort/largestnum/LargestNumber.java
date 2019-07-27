@@ -1,7 +1,6 @@
 package com.example.java.interview.guide.chapter2.sort.largestnum;
 
 import java.util.Arrays;
-import java.util.Comparator;
 
 /**
  * @Author : zhouguanya

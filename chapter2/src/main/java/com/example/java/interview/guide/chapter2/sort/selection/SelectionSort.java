@@ -9,15 +9,15 @@ package com.example.java.interview.guide.chapter2.sort.selection;
  */
 public class SelectionSort {
     /**
-         * 排序方法
-         *
-         * @param source 原数组
-         */
-        public void sort(int[] source) {
-            // 数组非空校验
-            if (source == null || source.length < 2) {
-                return;
-            }
+     * 排序方法
+     *
+     * @param source 原数组
+     */
+    public void sort(int[] source) {
+        // 数组非空校验
+        if (source == null || source.length < 2) {
+            return;
+        }
         // 表示调整的次数  一共需要 source.length - 1次
         for (int i = 0; i < source.length - 1; i++) {
             // 最小值的索引位置
