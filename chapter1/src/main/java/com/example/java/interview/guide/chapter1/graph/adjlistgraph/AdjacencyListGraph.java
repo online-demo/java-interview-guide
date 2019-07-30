@@ -11,7 +11,11 @@ import java.util.Set;
  * @Description : 无向图的邻接表实现
  */
 public class AdjacencyListGraph {
+    /**
+     * 顶点数组
+     */
     public String[] vertexArray;
+
     /**
      * 邻接点组成的单链表的单个结点
      */
@@ -47,8 +51,9 @@ public class AdjacencyListGraph {
 
     /**
      * 构造器
-     * @param vertexArray   顶点数组
-     * @param edgeArray     表示无向图的二维边数组
+     *
+     * @param vertexArray 顶点数组
+     * @param edgeArray   表示无向图的二维边数组
      */
     public AdjacencyListGraph(String[] vertexArray, String[][] edgeArray) {
         // 初始化"顶点数"和"边数"
@@ -105,8 +110,8 @@ public class AdjacencyListGraph {
     /**
      * 返回指定元素在顶点数组中的位置
      *
-     * @param value     待查找元素
-     * @return          位置
+     * @param value 待查找元素
+     * @return 位置
      */
     private int getPosition(String value) {
         for (int i = 0; i < vertexNodes.length; i++) {
@@ -119,6 +124,7 @@ public class AdjacencyListGraph {
 
     /**
      * 查询一个顶点的邻接点
+     *
      * @param value
      * @return
      */
@@ -133,7 +139,7 @@ public class AdjacencyListGraph {
             }
         }
         // 从链表表头开始向后迭代，找到所有的邻接点
-        while(current != null) {
+        while (current != null) {
             VertexNode node = vertexNodes[current.index];
             set.add(node.value);
             current = current.next;
