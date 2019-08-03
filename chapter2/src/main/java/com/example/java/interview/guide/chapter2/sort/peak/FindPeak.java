@@ -36,7 +36,8 @@ public class FindPeak {
             // high和low中间元素索引位置
             mid = (high - low) / 2 + low;
             // 如果array[mid] 大于左右两边的元素，则返回mid
-            if (array[mid] > (mid - 1 < 0 ? Integer.MIN_VALUE : array[mid - 1]) && array[mid] > (mid + 1 > size - 1 ? Integer.MIN_VALUE : array[mid + 1])) {
+            if (array[mid] > (mid - 1 < 0 ? Integer.MIN_VALUE : array[mid - 1])
+                    && array[mid] > (mid + 1 > size - 1 ? Integer.MIN_VALUE : array[mid + 1])) {
                 return mid;
                 // 如果array[mid]小于左边的数
             } else if (array[mid] < (mid - 1 < 0 ? Integer.MIN_VALUE : array[mid - 1])) {
