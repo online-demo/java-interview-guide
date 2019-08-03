@@ -7,7 +7,7 @@ import static com.example.java.interview.guide.chapter1.graph.minsubtree.Kruskal
  * @Project : java-interview-guide
  * @Date : 2019-06-19 17:11
  * @Version : V1.0
- * @Description :  普里姆(Prim)算法最小生成树测试
+ * @Description : 普里姆(Prim)算法最小生成树测试
  */
 public class PrimMinSubTreeDemo {
     public static void main(String[] args) {

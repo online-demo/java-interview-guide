@@ -5,16 +5,19 @@ package com.example.java.interview.guide.chapter1.graph.minsubtree;
  * @Project : java-interview-guide
  * @Date : 2019-06-19 16:45
  * @Version : V1.0
- * @Description :  普里姆(Prim)算法最小生成树测试
+ * @Description : 普里姆(Prim)算法生成最小生成树
  */
 public class PrimMinSubTree {
+    /**
+     * 表示顶点之前没有边相连
+     */
     private static int INF = Integer.MAX_VALUE;
 
     /**
      * prim最小生成树
      *
-     * @param start     从图中的第start个元素开始，生成最小树
-     * @param graph     图
+     * @param start 从图中的第start个元素开始，生成最小树
+     * @param graph 图
      */
     public void minSubTree(int start, AdjacencyListWeightGraph graph) {
         int min, i, j, k, m, n, tmp, sum;
@@ -123,13 +126,14 @@ public class PrimMinSubTree {
 
     /**
      * 返回顶点的位置
+     *
      * @param ch    顶点
      * @param graph 图
-     * @return      位置
+     * @return 位置
      */
     private int getPosition(char ch, AdjacencyListWeightGraph graph) {
-        for(int i = 0; i<graph.vertexNodes.length; i++) {
-            if(graph.vertexNodes[i].data==ch) {
+        for (int i = 0; i < graph.vertexNodes.length; i++) {
+            if (graph.vertexNodes[i].data == ch) {
                 return i;
             }
         }

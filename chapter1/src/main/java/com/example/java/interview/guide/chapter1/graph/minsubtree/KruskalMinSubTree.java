@@ -5,9 +5,44 @@ package com.example.java.interview.guide.chapter1.graph.minsubtree;
  * @Project : java-interview-guide
  * @Date : 2019-06-18 16:18
  * @Version : V1.0
- * @Description :  克鲁斯卡尔（Kruskal)最小生成树
+ * @Description : 克鲁斯卡尔（Kruskal)最小生成树
  */
 public class KruskalMinSubTree {
+    /**
+     * @Author : zhouguanya
+     * @Project : java-interview-guide
+     * @Date : 2019-06-18 10:48
+     * @Version : V1.0
+     * @Description : 通过邻接表构造图的边的输入结构
+     */
+    public static class EdgeData {
+        /**
+         * 边的起点
+         */
+        char start;
+        /**
+         * 边的终点
+         */
+        char end;
+        /**
+         * 边的权重
+         */
+        int weight;
+
+        /**
+         * 构造器
+         *
+         * @param start  边的起点
+         * @param end    边的终点
+         * @param weight 边的权重
+         */
+        public EdgeData(char start, char end, int weight) {
+            this.start = start;
+            this.end = end;
+            this.weight = weight;
+        }
+    }
+
     /**
      * 打印最小生成树
      */
@@ -23,7 +58,7 @@ public class KruskalMinSubTree {
         // 将边按照"权"的大小进行排序(从小到大)
         sortEdges(edges, graph.edgNum);
         // 遍历带权边（从权重最小的边开始遍历）
-        for (int i = 0; i< graph.edgNum; i++) {
+        for (int i = 0; i < graph.edgNum; i++) {
             // 获取第i条边的"起点"的序号
             int startPosition = getPosition(edges[i].start, graph);
             // 获取第i条边的"终点"的序号
@@ -56,11 +91,11 @@ public class KruskalMinSubTree {
     /**
      * 根据连接表获取图中的带权边
      *
-     * @param graph     邻接表表示带权图
-     * @return          边数组
+     * @param graph 邻接表表示带权图
+     * @return 边数组
      */
     private EdgeData[] getEdges(AdjacencyListWeightGraph graph) {
-        int index=0;
+        int index = 0;
         EdgeData[] edges = new EdgeData[graph.edgNum];
         for (int i = 0; i < graph.vertexNodes.length; i++) {
             AdjacencyListWeightGraph.EdgeNode node = graph.vertexNodes[i].firstEdge;
@@ -94,13 +129,14 @@ public class KruskalMinSubTree {
 
     /**
      * 返回顶点的位置
+     *
      * @param ch    顶点
      * @param graph 图
-     * @return      位置
+     * @return 位置
      */
     private int getPosition(char ch, AdjacencyListWeightGraph graph) {
-        for(int i = 0; i<graph.vertexNodes.length; i++) {
-            if(graph.vertexNodes[i].data==ch) {
+        for (int i = 0; i < graph.vertexNodes.length; i++) {
+            if (graph.vertexNodes[i].data == ch) {
                 return i;
             }
         }
@@ -109,9 +145,10 @@ public class KruskalMinSubTree {
 
     /**
      * 递归获取position的终点
-     * @param vertexEndArray    用于保存"已有最小生成树"中每个顶点在该最小树中的终点
-     * @param position          顶点位置
-     * @return                  最终的终点位置
+     *
+     * @param vertexEndArray 用于保存"已有最小生成树"中每个顶点在该最小树中的终点
+     * @param position       顶点位置
+     * @return 最终的终点位置
      */
     private int getEnd(int[] vertexEndArray, int position) {
         while (vertexEndArray[position] != 0) {

@@ -12,8 +12,11 @@ import com.example.java.interview.guide.chapter1.graph.dfs.DepthFirstSearchDemo;
  */
 public class BreadthFirstSearchDemo {
     public static void main(String[] args) {
-        AdjacencyListGraph adjacencyListGraph = DepthFirstSearchDemo.init();
-        BreadthFirstSearch breadthFirstSearch = new BreadthFirstSearch(adjacencyListGraph);
+        AdjacencyListGraph adjacencyListGraph =
+                DepthFirstSearchDemo.init();
+        BreadthFirstSearch breadthFirstSearch =
+                new BreadthFirstSearch(adjacencyListGraph);
+        System.out.print("从顶点0开始图的广度优先遍历：");
         breadthFirstSearch.bfsPrint("0");
     }
 }

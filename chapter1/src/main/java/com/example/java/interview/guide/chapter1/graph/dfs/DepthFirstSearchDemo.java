@@ -12,9 +12,12 @@ import com.example.java.interview.guide.chapter1.graph.adjlistgraph.AdjacencyLis
 public class DepthFirstSearchDemo {
     public static void main(String[] args) {
         AdjacencyListGraph adjacencyListGraph = init();
-        DepthFirstSearch depthFirstSearch = new DepthFirstSearch(adjacencyListGraph);
+        DepthFirstSearch depthFirstSearch =
+                new DepthFirstSearch(adjacencyListGraph);
+        System.out.print("从顶点0开始图的深度优先遍历：");
         depthFirstSearch.dfsPrint("0");
     }
+
     public static AdjacencyListGraph init() {
         String[] vertexArray = {"0", "1", "2", "3", "4", "5"};
         String[][] edges = new String[][]{
@@ -27,6 +30,6 @@ public class DepthFirstSearchDemo {
                 {"3", "4"},
                 {"3", "5"}
         };
-        return new AdjacencyListGraph(vertexArray,edges);
+        return new AdjacencyListGraph(vertexArray, edges);
     }
 }

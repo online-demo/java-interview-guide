@@ -6,7 +6,7 @@ package com.example.java.interview.guide.chapter1.graph.minsubtree;
  * @Project : java-interview-guide
  * @Date : 2019-06-17 17:58
  * @Version : V1.0
- * @Description :  邻接表表示带权图
+ * @Description : 邻接表表示带权图
  */
 public class AdjacencyListWeightGraph {
     /**
@@ -53,16 +53,16 @@ public class AdjacencyListWeightGraph {
     /**
      * 创建图(用已提供的矩阵)
      *
-     * @param vertexArray       顶点数组
-     * @param edges             边数组
+     * @param vertexArray 顶点数组
+     * @param edges       边数组
      */
-    public AdjacencyListWeightGraph(char[] vertexArray, EdgeData[] edges) {
+    public AdjacencyListWeightGraph(char[] vertexArray, KruskalMinSubTree.EdgeData[] edges) {
 
-        // 初始化"顶点数"和"边数"
+        // 初始化图的顶点数和边数
         int vertexArrayLength = vertexArray.length;
         int edgeLength = edges.length;
 
-        // 初始化"顶点"
+        // 初始化图的顶点
         this.vertexNodes = new VertexNode[vertexArrayLength];
         for (int i = 0; i < this.vertexNodes.length; i++) {
             this.vertexNodes[i] = new VertexNode();
@@ -70,9 +70,9 @@ public class AdjacencyListWeightGraph {
             this.vertexNodes[i].firstEdge = null;
         }
 
-        // 初始化"边"
+        // 初始化边
         edgNum = edgeLength;
-        for (EdgeData edge : edges) {
+        for (KruskalMinSubTree.EdgeData edge : edges) {
             // 读取边的起始顶点和结束顶点
             char c1 = edge.start;
             char c2 = edge.end;
@@ -89,6 +89,7 @@ public class AdjacencyListWeightGraph {
             if (this.vertexNodes[p1].firstEdge == null) {
                 this.vertexNodes[p1].firstEdge = node1;
             } else {
+                // 将node结点连接到list的最后
                 linkLast(this.vertexNodes[p1].firstEdge, node1);
             }
             // 初始化node2
@@ -105,13 +106,13 @@ public class AdjacencyListWeightGraph {
     }
 
     /**
-     * 将node结点链接到list的最后
+     * 将node结点连接到list的最后
      *
      * 在链表尾部添加元素（与无向图邻接表在链表头部添加元素形成对比）
      */
     private void linkLast(EdgeNode edgeNode, EdgeNode node) {
         EdgeNode temp = edgeNode;
-        while(temp.nextEdge!=null) {
+        while (temp.nextEdge != null) {
             temp = temp.nextEdge;
         }
         temp.nextEdge = node;
@@ -119,12 +120,13 @@ public class AdjacencyListWeightGraph {
 
     /**
      * 返回结点位置
-     * @param ch        待查结点
-     * @return          位置信息
+     *
+     * @param ch 待查结点
+     * @return 位置信息
      */
     private int getPosition(char ch) {
-        for(int i = 0; i< vertexNodes.length; i++) {
-            if(vertexNodes[i].data==ch) {
+        for (int i = 0; i < vertexNodes.length; i++) {
+            if (vertexNodes[i].data == ch) {
                 return i;
             }
         }

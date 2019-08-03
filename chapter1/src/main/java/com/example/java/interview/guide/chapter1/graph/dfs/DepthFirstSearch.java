@@ -15,6 +15,7 @@ public class DepthFirstSearch {
     private Map<String, Boolean> visited;
     AdjacencyListGraph graph;
     LinkedList<String> list;
+
     /**
      * 构造器
      */
@@ -28,15 +29,15 @@ public class DepthFirstSearch {
     /**
      * 深度优先遍历
      *
-     * @param value     深度优先遍历的起点
+     * @param value 深度优先遍历的起点
      */
     public void dfsPrint(String value) {
         // 已遍历元素标记为true
         visited.put(value, true);
         System.out.print(value + "    ");
         // 查找value的邻接点并开始迭代每个邻接点
-        for(String adj : graph.adj(value)) {
-            if(visited.get(adj) == null || !visited.get(adj)) {
+        for (String adj : graph.adj(value)) {
+            if (visited.get(adj) == null || !visited.get(adj)) {
                 // value的每个邻接点递归深度优先遍历
                 dfsPrint(adj);
             }
