@@ -56,7 +56,7 @@ public class AdjacencyListWeightGraph {
      * @param vertexArray 顶点数组
      * @param edges       边数组
      */
-    public AdjacencyListWeightGraph(char[] vertexArray, KruskalMinSubTree.EdgeData[] edges) {
+    public AdjacencyListWeightGraph(char[] vertexArray, EdgeData[] edges) {
 
         // 初始化图的顶点数和边数
         int vertexArrayLength = vertexArray.length;
@@ -72,7 +72,7 @@ public class AdjacencyListWeightGraph {
 
         // 初始化边
         edgNum = edgeLength;
-        for (KruskalMinSubTree.EdgeData edge : edges) {
+        for (EdgeData edge : edges) {
             // 读取边的起始顶点和结束顶点
             char c1 = edge.start;
             char c2 = edge.end;

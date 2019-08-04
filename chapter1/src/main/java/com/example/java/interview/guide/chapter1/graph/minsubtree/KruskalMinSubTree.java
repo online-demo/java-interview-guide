@@ -8,40 +8,6 @@ package com.example.java.interview.guide.chapter1.graph.minsubtree;
  * @Description : 克鲁斯卡尔（Kruskal)最小生成树
  */
 public class KruskalMinSubTree {
-    /**
-     * @Author : zhouguanya
-     * @Project : java-interview-guide
-     * @Date : 2019-06-18 10:48
-     * @Version : V1.0
-     * @Description : 通过邻接表构造图的边的输入结构
-     */
-    public static class EdgeData {
-        /**
-         * 边的起点
-         */
-        char start;
-        /**
-         * 边的终点
-         */
-        char end;
-        /**
-         * 边的权重
-         */
-        int weight;
-
-        /**
-         * 构造器
-         *
-         * @param start  边的起点
-         * @param end    边的终点
-         * @param weight 边的权重
-         */
-        public EdgeData(char start, char end, int weight) {
-            this.start = start;
-            this.end = end;
-            this.weight = weight;
-        }
-    }
 
     /**
      * 打印最小生成树
