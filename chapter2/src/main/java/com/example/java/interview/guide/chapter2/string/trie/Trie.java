@@ -12,11 +12,11 @@ import java.util.Map;
  */
 public class Trie {
     /**
-     * 结点
+     * 结点类
      */
     static class Node {
         /**
-         * 单词是否遍历完
+         * 是否到达单词的末尾
          */
         boolean isEnd;
         /**
@@ -30,6 +30,9 @@ public class Trie {
      */
     private Node root;
 
+    /**
+     * 构造器
+     */
     public Trie() {
         root = new Node();
     }
@@ -37,42 +40,54 @@ public class Trie {
     /**
      * 添加单词到前缀树
      *
-     * @param word      单词
+     * @param word 单词
      */
     public void add(String word) {
+        // 单词非空校验
         if (word == null || word.length() == 0) {
             return;
         }
-        Node cur = root;
+        // 获取根结点
+        Node current = root;
+        // 遍历单词的每个字符
         for (int i = 0; i < word.length(); i++) {
             // 获取word第i位置上的字符
             char character = word.charAt(i);
-            // 子孩子包含这个字符
-            if (!cur.children.containsKey(character)) {
-                // 如果当前结点中的子结点中不包含当前字符，新建一个子结点
-                cur.children.put(character, new Node());
+            // 当前的结点的子孩子不包含这个字符
+            if (!current.children.containsKey(character)) {
+                // 如果当前结点中的子结点中不包含当前字符
+                // 新建一个子结点，并将这个字符存放到children中
+                current.children.put(character, new Node());
             }
-            // 指向结点的下一个结点
-            cur = cur.children.get(character);
+            // 指向当前结点的下一个结点
+            current = current.children.get(character);
         }
-        cur.isEnd = true;
+        // 跳出循环后，单词每个字符都已经遍历完
+        current.isEnd = true;
     }
 
     /**
      * 查找word是否已存在前缀树中
      *
-     * @param word      待查的单词
-     * @return          查询结果
+     * @param word 待查的单词
+     * @return 查询结果
      */
     public boolean search(String word) {
-        Node cur = root;
-        for(int i = 0 ; i < word.length() ; i++) {
+        // 获取根结点
+        Node current = root;
+        // 遍历单词的每个字符
+        for (int i = 0; i < word.length(); i++) {
+            // 获取word第i位置上的字符
             char character = word.charAt(i);
-            if (!cur.children.containsKey(character)) {
+            // 当前节点的子节点集合children不包含这个字符
+            if (!current.children.containsKey(character)) {
+                // word这个单词不存在于前缀树中
                 return false;
             }
-            cur = cur.children.get(character);
+            // 指向当前结点的下一个结点
+            current = current.children.get(character);
         }
-        return cur.isEnd;
+        // 是否到达单词的末尾，如果是，则表明单词word存在于前缀树中
+        return current.isEnd;
     }
 }

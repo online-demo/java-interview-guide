@@ -1,6 +1,5 @@
 package com.example.java.interview.guide.chapter2.string.split;
 
-import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -14,45 +13,30 @@ public class WordSplit {
     /**
      * 判断content是否可以被拆分为一个或多个在字典中出现的单词
      *
-     * @param content       待拆分字符串
-     * @return              返回结果
+     * @param content        待拆分字符串
+     * @param wordDictionary 字典
+     * @return 返回结果
      */
     public boolean splitToWordDictionary(String content, Set<String> wordDictionary) {
-        boolean[] dp = new boolean[content.length() + 1];
-        dp[0] = true;
+        // 记录content每一段子串是够满足条件
+        boolean[] subStringResult = new boolean[content.length() + 1];
+        // 初始化subStringResult[0]为true方便下面的计算
+        subStringResult[0] = true;
+        // i从1向后遍历，直至整个content字符串
         for (int i = 1; i <= content.length(); i++) {
-            for (int j = i - 1; j >= 0 && !dp[i]; j--) {
+            // 从i向前检测每段字符串是否满足条件
+            for (int j = i - 1; j >= 0 && !subStringResult[i]; j--) {
                 // 截取从j到i的子串
                 String subString = content.substring(j, i);
-                dp[i] = dp[j] && wordDictionary.contains(subString);
+                // 赋值subStringResult的第i个元素的值
+                // subStringResult[i]等于
+                // subStringResult[j]的结果 && j~i间的子串是否存在于字典中
+                subStringResult[i] = subStringResult[j]
+                        && wordDictionary.contains(subString);
             }
         }
-        return dp[content.length()];
+        // 返回整个字符串是否满足条件
+        return subStringResult[content.length()];
     }
 
-    public static void main(String[] args) {
-        String content1 = "leetcode";
-        Set<String> set1 = new HashSet<>();
-        set1.add("leet");
-        set1.add("code");
-        WordSplit wordSplit = new WordSplit();
-        System.out.printf("测试%s，字典=%s，结果=", content1, set1);
-        System.out.println(wordSplit.splitToWordDictionary(content1, set1));
-        String content2 = "applepenapple";
-        Set<String> set2 = new HashSet<>();
-        set2.add("apple");
-        set2.add("pen");
-        set2.add("apple");
-        System.out.printf("测试%s，字典=%s，结果=", content2, set2);
-        System.out.println(wordSplit.splitToWordDictionary(content2, set2));
-        String content3 = "catsandog";
-        Set<String> set3 = new HashSet<>();
-        set3.add("cats");
-        set3.add("dog");
-        set3.add("sand");
-        set3.add("and");
-        set3.add("cat");
-        System.out.printf("测试%s，字典=%s，结果=", content3, set3);
-        System.out.println(wordSplit.splitToWordDictionary(content3, set3));
-    }
 }
