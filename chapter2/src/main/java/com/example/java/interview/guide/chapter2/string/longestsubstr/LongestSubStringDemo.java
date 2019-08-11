@@ -11,13 +11,16 @@ public class LongestSubStringDemo {
     public static void main(String[] args) {
         LongestSubString longestSubString = new LongestSubString();
         String content1 = "abcabcbb";
-        System.out.print(content1 +"无重复字符的最长子串=");
-        System.out.println(longestSubString.lengthOfLongestSubString(content1));
+        System.out.print(content1 + "无重复字符的最长子串=");
+        System.out.println(longestSubString.
+                lengthOfLongestSubString(content1));
         String content2 = "bbbbb";
-        System.out.print(content2 +"无重复字符的最长子串=");
-        System.out.println(longestSubString.lengthOfLongestSubString(content2));
+        System.out.print(content2 + "无重复字符的最长子串=");
+        System.out.println(longestSubString.
+                lengthOfLongestSubString(content2));
         String content3 = "pwwkew";
-        System.out.print(content3 +"无重复字符的最长子串=");
-        System.out.println(longestSubString.lengthOfLongestSubString(content3));
+        System.out.print(content3 + "无重复字符的最长子串=");
+        System.out.println(longestSubString.
+                lengthOfLongestSubString(content3));
     }
 }

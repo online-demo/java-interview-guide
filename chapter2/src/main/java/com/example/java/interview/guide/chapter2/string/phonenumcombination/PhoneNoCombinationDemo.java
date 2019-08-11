@@ -11,9 +11,11 @@ import java.util.List;
  */
 public class PhoneNoCombinationDemo {
     public static void main(String[] args) {
-        PhoneNoCombination phoneNoCombination = new PhoneNoCombination();
+        PhoneNoCombination phoneNoCombination
+                = new PhoneNoCombination();
         String phoneNo = "23";
-        List<String> result = phoneNoCombination.letterCombinations(phoneNo);
+        List<String> result = phoneNoCombination
+                .letterCombinations(phoneNo);
         System.out.printf("电话号码%s的字母组合是：%n", phoneNo);
         System.out.println(result);
     }

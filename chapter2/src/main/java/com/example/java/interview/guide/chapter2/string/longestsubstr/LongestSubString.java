@@ -13,12 +13,13 @@ import java.util.Map;
 public class LongestSubString {
     /**
      * 无重复字符的最长子串
-     * @param content       待查字符串
-     * @return              长度
+     *
+     * @param content 待查字符串
+     * @return 长度
      */
     public int lengthOfLongestSubString(String content) {
         // 保存第一个不重复的字符的位置
-        Map<Character,Integer> characterIndexMap = new HashMap<>(16);
+        Map<Character, Integer> characterIndexMap = new HashMap<>(16);
         // 无重复字符的最长子串的长度
         int maxLength = 0;
         // 当前有效的非空子串的起始位置
@@ -43,6 +44,7 @@ public class LongestSubString {
             // 修改当前字符的value，记录最新位置
             characterIndexMap.put(character, i);
         }
+        // 返回无重复字符的最长子串的长度
         return maxLength;
     }
 }

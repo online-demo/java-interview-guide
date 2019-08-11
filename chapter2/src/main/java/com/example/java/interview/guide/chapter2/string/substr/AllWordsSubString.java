@@ -13,17 +13,17 @@ public class AllWordsSubString {
     /**
      * 查找串联所有单词的子串
      *
-     * @param content       字符串
-     * @param words         单词数组
-     * @return              子串的位置
+     * @param content 字符串
+     * @param words   单词数组
+     * @return 子串的位置
      */
     public List<Integer> findSubstring(String content, String[] words) {
         // 字符串非空校验
-        if (content == null || content.length() == 0){
+        if (content == null || content.length() == 0) {
             return Collections.emptyList();
         }
         // 单词数组校验
-        if (words == null ||  words.length == 0 ) {
+        if (words == null || words.length == 0) {
             return Collections.emptyList();
         }
         // 结果集
@@ -32,7 +32,7 @@ public class AllWordsSubString {
         int size = words[0].length();
         // 单词数组长度
         int length = words.length;
-        // 单词Map
+        // 创建单词Map
         Map<String, Integer> wordsMap = createMap(words);
         // 窗口的不同的初始起点，有size个不同的初始起点
         for (int i = 0; i < size; i++) {
@@ -44,7 +44,7 @@ public class AllWordsSubString {
             int right = i;
             // 窗口右侧剩余字符长度不足一个单词的长度 && 剩余子串不足所有单词的总长度  退出循环
             while (right <= content.length() - size && left <= content.length() - length * size) {
-                // 截取窗口有边界size长度的字符串
+                // 截取size长度的字符串
                 String word = content.substring(right, right + size);
                 // 统计截取的单词出现的次数
                 increase(windowWordsMap, word);
@@ -80,8 +80,8 @@ public class AllWordsSubString {
     /**
      * 减少单词的次数
      *
-     * @param wordsMap      单词次数Map
-     * @param word          单词
+     * @param wordsMap 单词次数Map
+     * @param word     单词
      */
     private void decrease(Map<String, Integer> wordsMap, String word) {
         if (wordsMap.containsKey(word)) {
@@ -97,8 +97,8 @@ public class AllWordsSubString {
     /**
      * 单词和出现的次数Map
      *
-     * @param words         单词数组
-     * @return              单词出现的次数Map
+     * @param words 单词数组
+     * @return 单词出现的次数Map
      */
     private Map<String, Integer> createMap(String[] words) {
         Map<String, Integer> wordsMap = new HashMap<>(16);
@@ -111,11 +111,13 @@ public class AllWordsSubString {
     /**
      * 增加单词的次数
      *
-     * @param wordsMap      单词次数Map
-     * @param word          单词
+     * @param wordsMap 单词次数Map
+     * @param word     单词
      */
     private void increase(Map<String, Integer> wordsMap, String word) {
+        // 返回key对应的value，如果key不存在则返回默认值
         int count = wordsMap.getOrDefault(word, 0);
+        // 增加单词的次数
         wordsMap.put(word, count + 1);
     }
 }
