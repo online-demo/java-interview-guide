@@ -10,9 +10,9 @@ package com.example.java.interview.guide.chapter2.array.rotate;
 public class RotateArray {
     /**
      * 旋转数组
-     * 
-     * @param array         原数组
-     * @param position      向右移动position位置
+     *
+     * @param array    原数组
+     * @param position 向右移动position位置
      */
     public void rotate(int[] array, int position) {
         // 参数校验
@@ -42,7 +42,8 @@ public class RotateArray {
             tempOut = array[i];
             // 内层循环  跟随外层循环移动后的位置进行调整
             in:
-            for (int j = (i + position) % length; j <= i; j = (j + position) % length) {
+            for (int j = (i + position) % length; j <= i;
+                 j = (j + position) % length) {
                 // 交换内外层循环的元素
                 tempIn = array[j];
                 array[j] = tempOut;
