@@ -1,6 +1,7 @@
 package com.example.interview.guide.chapter3.list.arraylist;
-import	java.util.Iterator;
-import	java.util.ArrayList;
+
+import java.util.Iterator;
+import java.util.ArrayList;
 
 
 /**
@@ -16,7 +17,7 @@ public class ArrayListDemo {
         ArrayList<Integer> arrayList = new ArrayList<>();
         int size = 10;
         // 初始化arrayList中的元素
-        for(int i = 0; i < size; i++) {
+        for (int i = 0; i < size; i++) {
             arrayList.add(i);
         }
         // 调用有参构造传入arrayList作为参数
@@ -35,9 +36,11 @@ public class ArrayListDemo {
             if (element == 5) {
                 iterator.remove();
                 System.out.printf("iterator迭代器删除元素：%s%n", element);
+                break;
             }
         }
-
+        iterator.forEachRemaining(integer
+                -> System.out.printf("forEachRemaining()输出：%s%n", integer));
         // 删除与arrayList交集的部分
         otherList.removeAll(arrayList);
         // 通过forEach方法迭代
