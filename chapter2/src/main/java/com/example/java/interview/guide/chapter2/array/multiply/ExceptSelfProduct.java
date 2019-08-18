@@ -51,17 +51,29 @@ public class ExceptSelfProduct {
      * @return 目标数组
      */
     public int[] product2(int[] source) {
+        // 原数组长度
         int size = source.length;
+        // 保存从左向右扫描数组的乘积
         int left = 1;
+        // 保存从右向左扫描数组的乘积
         int right = 1;
+        // 结果数组
         int[] result = new int[size];
+        // 给结果数组赋初始值
         for (int i = 0; i < size; i++) {
             result[i] = 1;
         }
+        // 遍历原数组 把result当做左右两个数组来使用
         for (int i = 0; i < source.length; i++) {
+            // 第i个元素左边各元素的乘积
+            // result[i]=result[i]*left
             result[i] *= left;
+            // 第i个元素右边各元素的乘积
+            // result[size - i - 1]=result[size - i - 1]*left
             result[size - i - 1] *= right;
+            // 修改left=left * source[i]
             left *= source[i];
+            // 修改right=right * source[size - i - 1]
             right *= source[size - i - 1];
         }
         return result;

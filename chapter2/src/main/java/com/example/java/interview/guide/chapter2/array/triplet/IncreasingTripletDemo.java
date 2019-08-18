@@ -12,9 +12,11 @@ public class IncreasingTripletDemo {
         IncreasingTriplet increasingTriplet = new IncreasingTriplet();
         int[] array1 = {1, 2, 3, 4, 5};
         System.out.print("数组{1,2,3,4,5}是否含有递增的三元子序列：");
-        System.out.println(increasingTriplet.containsIncreasingTriplet(array1));
+        System.out.println(increasingTriplet
+                .containsIncreasingTriplet(array1));
         int[] array2 = {5, 4, 3, 2, 1};
         System.out.print("数组{5,4,3,2,1}是否含有递增的三元子序列：");
-        System.out.println(increasingTriplet.containsIncreasingTriplet(array2));
+        System.out.println(increasingTriplet
+                .containsIncreasingTriplet(array2));
     }
 }

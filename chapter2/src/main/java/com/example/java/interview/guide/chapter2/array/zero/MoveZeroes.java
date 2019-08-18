@@ -11,7 +11,7 @@ public class MoveZeroes {
     /**
      * 移动零
      *
-     * @param array     原数组
+     * @param array 原数组
      */
     public void move(int[] array) {
         // 非空校验

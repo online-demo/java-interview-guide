@@ -17,9 +17,11 @@ public class InterSect {
     /**
      * 两个数组的交集实现1
      *
-     * @param array1        数组1
-     * @param array2        数组2
-     * @return              交集
+     * 统计数组1中每个数组出现的次数并用数组2做对比
+     *
+     * @param array1 数组1
+     * @param array2 数组2
+     * @return 交集
      */
     public List<Integer> intersect1(int[] array1, int[] array2) {
         if (array1 == null || array1.length == 0 || array2 == null || array2.length == 0) {
@@ -29,7 +31,7 @@ public class InterSect {
         Map<Integer, Integer> counter = new HashMap<>(16);
         // 统计数组1
         for (int i = 0; i < array1.length; i++) {
-            int num = array1[1];
+            int num = array1[i];
             // 数字已经出现过 次数加1
             if (counter.containsKey(num)) {
                 counter.put(num, counter.get(num) + 1);
@@ -56,11 +58,11 @@ public class InterSect {
 
     /**
      * 两个数组的交集实现2
-     *  两个数组都有序
+     * 进阶题：两个数组都有序
      *
-     * @param array1        数组1
-     * @param array2        数组2
-     * @return              交集
+     * @param array1 数组1
+     * @param array2 数组2
+     * @return 交集
      */
     public List<Integer> intersect2(int[] array1, int[] array2) {
         int cursor1 = 0;

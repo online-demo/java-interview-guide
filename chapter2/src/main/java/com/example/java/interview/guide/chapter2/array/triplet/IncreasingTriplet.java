@@ -16,11 +16,14 @@ public class IncreasingTriplet {
      * @return          结果
      */
     public boolean containsIncreasingTriplet(int[] array) {
-        int high = Integer.MAX_VALUE;
-        int low = Integer.MAX_VALUE;
+        // 数组合法性校验
         if (array == null || array.length == 0) {
             return false;
         }
+        // 最大值
+        int high = Integer.MAX_VALUE;
+        // 最小值
+        int low = Integer.MAX_VALUE;
         for (int num : array) {
             // 数字小于当前最小值
             if (num <= low) {
