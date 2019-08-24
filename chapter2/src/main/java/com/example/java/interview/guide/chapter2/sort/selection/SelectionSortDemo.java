@@ -12,6 +12,8 @@ public class SelectionSortDemo {
         SelectionSort selectionSort = new SelectionSort();
         int[] array = {42, 20, 17, 13, 28, 14, 23, 15};
         selectionSort.sort(array);
+        System.out.println("{42, 20, 17, 13, 28, 14, 23, 15}" +
+                "\n进行冒泡排序后的结果是：");
         for (int num : array) {
             System.out.print(num + " ");
         }

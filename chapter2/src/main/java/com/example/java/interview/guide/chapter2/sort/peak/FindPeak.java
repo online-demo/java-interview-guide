@@ -15,7 +15,7 @@ public class FindPeak {
      * @return 峰值元素的索引
      */
     public int findPeakElementIndex(int[] array) {
-        // 数组非空校验
+        // 数组非空校验和长度校验
         if (array == null || array.length == 0) {
             return -1;
         }

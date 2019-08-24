@@ -12,6 +12,8 @@ public class InsertionSortDemo {
         InsertionSort insertionSort = new InsertionSort();
         int[] array = {42, 20, 17, 13, 28, 14, 23, 15};
         insertionSort.sort(array);
+        System.out.println("{42, 20, 17, 13, 28, 14, 23, 15}" +
+                "\n进行插入排序后的结果是：");
         for (int num : array) {
             System.out.print(num + " ");
         }

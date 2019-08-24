@@ -14,12 +14,12 @@ public class InsertionSort {
      * @param source 原数组
      */
     public void sort(int[] source) {
-        // 数组非空校验
+        // 数组非空校验和长度校验
         if (source == null || source.length < 2) {
             return;
         }
         for (int i = 0; i < source.length - 1; i++) {
-            // 当前比较的元素
+            // 当前已排序的序列的最后一个元素
             int current = source[i + 1];
             // 前一个元素
             int preIndex = i;
