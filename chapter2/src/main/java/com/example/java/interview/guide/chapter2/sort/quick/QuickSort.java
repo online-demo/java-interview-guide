@@ -28,24 +28,29 @@ public class QuickSort {
      * @param start 排序的起点
      * @param end   排序的终点
      */
-    void quickSort(int[] array, int start, int end) {
-        if (array.length < 1 || start < 0 || end > array.length || start > end) {
+    private void quickSort(int[] array, int start, int end) {
+        // 数组长度校验和起点终点校验
+        if (array.length < 1 || start < 0
+                || end > array.length || start > end) {
             return;
         }
         if (start < end) {
+            // 初始化left指针
             int left = start;
+            // 初始化right指针
             int right = end;
-            // 基准数
+            // 选取基准数 pivot为数组第一个元素
             int pivot = array[start];
             while (left < right) {
                 // 从右向左找,right指向的位置 > pivot，则right左移
                 // 当出现array[right] < pivot时，退出循环
                 while (left < right && array[right] >= pivot) {
-                    // 右指针向左移动
+                    // 右指针向左移动1位
                     right--;
                 }
                 if (left < right) {
-                    // 入坑
+                    // right指针指向的元素入坑
+                    // left指针向右移动1位
                     array[left++] = array[right];
                 }
                 // 从左向右找,left指向的位置 < pivot，则left左移
@@ -55,18 +60,22 @@ public class QuickSort {
                     left++;
                 }
                 if (left < right) {
-                    // 入坑
+                    // left指针指向的元素入坑
+                    // right指针向左移动1位
                     array[right--] = array[left];
                 }
             }
+            // 如果left指针与right指针相遇
             if (left == right) {
                 // 调整基准数的位置
-                // 调整后，基准数左边的数都小于基准数，基准数右边的数都大于基准数
+                // 基准数填入坑后
+                // 基准数左边的数都小于基准数
+                // 基准数右边的数都大于基准数
                 array[left] = pivot;
             }
-            // 递归基准数左边的数组
+            // 基准数左边的数组进行递归
             quickSort(array, start, left - 1);
-            // 递归基准数右边的数组
+            // 基准数右边的数组进行递归
             quickSort(array, left + 1, end);
         }
     }

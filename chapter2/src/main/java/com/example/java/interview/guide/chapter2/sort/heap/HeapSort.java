@@ -8,6 +8,11 @@ package com.example.java.interview.guide.chapter2.sort.heap;
  * @Description : 堆排序
  */
 public class HeapSort {
+    /**
+     * 对数组排序
+     *
+     * @param source 待排序的数组
+     */
     public void sort(int[] source) {
         // 数组非空校验和长度校验
         if (source == null || source.length < 2) {
@@ -17,11 +22,16 @@ public class HeapSort {
         int length = source.length;
         // 构建大顶堆
         buildMaxHeap(source, length);
+        // 经过以上步骤构建大顶堆后
+        // 最大的元素一定在堆顶
+        // 堆顶元素的索引是0
         // 从数组最后一个元素开始遍历
         for (int i = source.length - 1; i > 0; i--) {
             // 最后一个元素与堆顶元素交换
+            // 既将最大元素放在数组最后一位
             swap(source, 0, i);
             // 堆顶元素交换后，不需要参与调整
+            // 因此长度减去1
             length--;
             // 调整大顶堆
             modifyMaxHeap(source, 0, length);
@@ -36,7 +46,8 @@ public class HeapSort {
      */
     private void buildMaxHeap(int[] source, int length) {
         // 构建大顶堆
-        for (int parent = (int) Math.floor(length / 2); parent >= 0; parent--) {
+        for (int parent = (int) Math.floor(length / 2);
+             parent >= 0; parent--) {
             // 调整大顶堆
             modifyMaxHeap(source, parent, length);
         }

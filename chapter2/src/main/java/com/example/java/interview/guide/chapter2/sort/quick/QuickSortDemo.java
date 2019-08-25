@@ -10,8 +10,10 @@ package com.example.java.interview.guide.chapter2.sort.quick;
 public class QuickSortDemo {
     public static void main(String[] args) {
         QuickSort quickSort = new QuickSort();
-        int[] array = {42, 20, 17, 13, 28, 14, 23, 15};
+        int[] array = {4, 7, 6, 5, 3, 2, 8, 1};
         quickSort.sort(array);
+        System.out.println("{4, 7, 6, 5, 3, 2, 8, 1}");
+        System.out.println("进行快速排序后的结果是：");
         for (int num : array) {
             System.out.print(num + " ");
         }
