@@ -23,7 +23,7 @@ public class BucketSort {
         int min = source[0];
         // 数组的最大值
         int max = source[0];
-        // 寻找数组最大值和最小值
+        // 遍历数组，寻找数组最大值和最小值
         for (int i = 1; i < source.length; i++) {
             if (source[i] > max) {
                 // 调整最大值
@@ -55,6 +55,7 @@ public class BucketSort {
             }
             // 对每个桶进行插入排序
             insertionSort.sort(bucket);
+            // 每个桶内已经排序的元素，放入source数组中
             for (int value : bucket) {
                 source[arrIndex++] = value;
             }
@@ -63,8 +64,8 @@ public class BucketSort {
     /**
      * 自动扩容，并保存数据
      *
-     * @param array
-     * @param value
+     * @param array 原数组
+     * @param value 新元素
      */
     private int[] arrAppend(int[] array, int value) {
         array = Arrays.copyOf(array, array.length + 1);

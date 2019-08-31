@@ -28,9 +28,11 @@ public class CountingSort {
                 min = source[i];
             }
         }
+        // 计算需要的桶的数量，用于计算每个元素出现的次数
         int[] bucket = new int[max - min + 1];
+        // 初始化
         Arrays.fill(bucket, 0);
-        // 偏移量
+        // 待排序数组中的元素相对于最小值的偏移量
         int offset = -1 * min;
         for (int i = 0; i < source.length; i++) {
             // 累加数字出现的频率
@@ -39,11 +41,13 @@ public class CountingSort {
         for (int index = 0, i = 0; index < source.length;) {
             // 元素出现的频率 != 0
             if (bucket[i] != 0) {
+                // 将排序后的元素写入原数组
                 source[index] = i - offset;
                 // 元素出现的频率减1
                 bucket[i]--;
                 index++;
             } else {
+                // 进入bucket数组的下一个位置遍历
                 i++;
             }
         }

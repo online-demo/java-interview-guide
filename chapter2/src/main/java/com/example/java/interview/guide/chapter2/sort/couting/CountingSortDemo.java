@@ -11,8 +11,10 @@ package com.example.java.interview.guide.chapter2.sort.couting;
 public class CountingSortDemo {
     public static void main(String[] args) {
         CountingSort countingSort = new CountingSort();
-        int[] array = {42, 20, 17, 13, 28, 14, 23, 15};
+        int[] array = {2, 3, 8, 7, 1, 2, 2, 2, 7, 3,
+                9, 8, 2, 1, 4, 2, 4, 6, 9, 2};
         countingSort.sort(array);
+        System.out.println("进行计数排序后的结果是：");
         for (int num : array) {
             System.out.print(num + " ");
         }
