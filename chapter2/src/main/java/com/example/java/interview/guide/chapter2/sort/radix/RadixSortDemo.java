@@ -10,8 +10,12 @@ package com.example.java.interview.guide.chapter2.sort.radix;
 public class RadixSortDemo {
     public static void main(String[] args) {
         RadixSort radixSort = new RadixSort();
-        int[] array = {42, 20, 17, 13, 28, 14, 23, 15};
+        int[] array = {3, 44, 38, 5, 47, 15, 36, 26,
+                27, 2, 46, 4, 19, 50, 48};
         radixSort.sort(array);
+        System.out.println("{3, 44, 38, 5, 47, 15, 36, 26," +
+                " 27, 2, 46, 4, 19, 50, 48}");
+        System.out.println("进行基数排序后的结果是：");
         for (int num : array) {
             System.out.print(num + " ");
         }
