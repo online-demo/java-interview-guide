@@ -24,12 +24,17 @@ public class LinkedListDemo {
         linkedList.forEach(integer
                 -> System.out.printf("输出linkedList中的元素：%s%n", integer));
         linkedList.addFirst(-1);
-        System.out.printf("linkedList第一个元素是：%s%n", linkedList.getFirst());
+        System.out.printf("linkedList第一个元素是：%s%n",
+                linkedList.getFirst());
         linkedList.addLast(10);
-        System.out.printf("linkedList是否包含元素10：%s%n", linkedList.contains(10));
-        System.out.printf("linkedList最后一个元素是：%s%n", linkedList.getLast());
-        System.out.printf("linkedList第5个位置上的元素是：%s%n", linkedList.get(5));
-        System.out.printf("linkedList元素10所在的位置是：%s%n", linkedList.indexOf(10));
+        System.out.printf("linkedList是否包含元素10：%s%n",
+                linkedList.contains(10));
+        System.out.printf("linkedList最后一个元素是：%s%n",
+                linkedList.getLast());
+        System.out.printf("linkedList第5个位置上的元素是：%s%n",
+                linkedList.get(5));
+        System.out.printf("linkedList元素10所在的位置是：%s%n",
+                linkedList.indexOf(10));
         linkedList.remove(0);
         // 获取迭代器
         Iterator<Integer> iterator = linkedList.iterator();
@@ -44,6 +49,7 @@ public class LinkedListDemo {
         }
         // forEachRemaining迭代剩余元素
         iterator.forEachRemaining(integer
-                -> System.out.printf("forEachRemaining()输出：%s%n", integer));
+                -> System.out.printf("forEachRemaining()输出：%s%n",
+                integer));
     }
 }
