@@ -22,28 +22,34 @@ public class QueueDemo {
         queue.offer("e");
         // 打印队列中的元素
         queue.forEach(string
-                -> System.out.printf("输出queue中的元素：%s%n", string));
+                -> System.out.printf("输出queue中的元素：%s%n",
+                string));
         // 返回第一个元素，并在队列中删除
-        System.out.printf("输出queue中的第一个元素：%s%n", queue.poll());
+        System.out.printf("输出queue中的第一个元素：%s%n",
+                queue.poll());
         // 返回第一个元素，但不删除
-        System.out.printf("输出queue中的第一个元素：%s%n", queue.element());
+        System.out.printf("输出queue中的第一个元素：%s%n",
+                queue.element());
         // 返回第一个元素，但不删除
-        System.out.printf("输出queue中的第一个元素：%s%n", queue.element());
-        // 返回第一个元素，但不删除
-        System.out.printf("输出queue中的第一个元素：%s%n", queue.peek());
+        System.out.printf("输出queue中的第一个元素：%s%n",
+                queue.peek());
         queue.forEach(string
-                -> System.out.printf("输出queue中的元素：%s%n", string));
+                -> System.out.printf("输出queue中的元素：%s%n",
+                string));
         // 队列尾部加入f
         queue.offerLast("f");
         // 返回最后一个元素，但不删除
-        System.out.printf("输出queue中的最后一个元素：%s%n", queue.peekLast());
+        System.out.printf("输出queue中的最后一个元素：%s%n",
+                queue.peekLast());
         // 返回最后一个元素，并删除
-        System.out.printf("输出queue中的最后一个元素：%s%n", queue.pollLast());
+        System.out.printf("输出queue中的最后一个元素：%s%n",
+                queue.pollLast());
 
-        // 队列头部加入新元素1
+        // 队列头部加入新元素z
         queue.push("z");
         // 打印队列中的元素
         queue.forEach(string
-                -> System.out.printf("输出queue中的元素：%s%n", string));
+                -> System.out.printf("输出queue中的元素：%s%n",
+                string));
     }
 }
