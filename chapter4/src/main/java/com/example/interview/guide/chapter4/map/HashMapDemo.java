@@ -62,6 +62,5 @@ public class HashMapDemo {
             System.out.printf("value=%s", value);
             System.out.println();
         });
-
     }
 }
