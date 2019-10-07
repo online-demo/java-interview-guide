@@ -1,4 +1,4 @@
-package com.example.interview.guide.chapter4.map;
+package com.example.interview.guide.chapter4.map.hashmap;
 
 import java.util.*;
 
@@ -12,7 +12,7 @@ import java.util.*;
 public class HashMapDemo {
     public static void main(String[] args) {
         Map<String, Integer> studentCore =
-                new HashMap<>(16);
+                new HashMap<>(8);
         studentCore.put("Michael", 90);
         studentCore.put("Jack", 85);
         studentCore.put("John", 88);
