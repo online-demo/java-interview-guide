@@ -1,6 +1,7 @@
 package com.example.interview.guide.chapter4.set.treeset;
 import java.util.Iterator;
 import java.util.NavigableSet;
+import java.util.SortedSet;
 import	java.util.TreeSet;
 
 /**
@@ -38,6 +39,30 @@ public class TreeSetDemo {
         while (descendingSetIterator.hasNext()) {
             System.out.print(descendingSetIterator.next() + " ");
         }
-
+        System.out.println();
+        System.out.printf("treeSet中的第1个元素：%s%n", treeSet.first());
+        System.out.printf("treeSet中的最后1个元素：%s%n", treeSet.last());
+        System.out.println("treeSet中大于或等于80的子集：");
+        SortedSet<Integer> greaterSetInclusive = treeSet.tailSet(80);
+        System.out.println(greaterSetInclusive);
+        System.out.println("treeSet中大于80的子集：");
+        SortedSet<Integer> greaterSetExclusive = treeSet.
+                tailSet(80, false);
+        System.out.println(greaterSetExclusive);
+        System.out.println("treeSet中小于或等于90的子集：");
+        SortedSet<Integer> lessSetInclusive = treeSet.headSet(90, true);
+        System.out.println(lessSetInclusive);
+        System.out.println("treeSet中小于90的子集：");
+        SortedSet<Integer> lessSetExclusive = treeSet.headSet(90);
+        System.out.println(lessSetExclusive);
+        System.out.printf("treeSet中大于或等于100的最小元素是：%s%n",
+                treeSet.ceiling(100));
+        System.out.printf("treeSet中小于或等于95的最大元素是：%s%n",
+                treeSet.floor(95));
+        System.out.printf("treeSet中小于90的最大元素：%s%n", treeSet.lower(90));
+        System.out.printf("treeSet中大于100的最小元素：%s%n", treeSet.higher(100));
+        System.out.printf("删除treeSet中的第1个元素：%s%n", treeSet.pollFirst());
+        System.out.printf("删除treeSet中的第1个元素：%s%n", treeSet.pollLast());
+        System.out.printf("treeSet中的剩余元素：%s%n", treeSet);
     }
 }
