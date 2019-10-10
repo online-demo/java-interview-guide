@@ -24,15 +24,15 @@ public class TreeSetDemo {
             System.out.print(iterator.next() + " ");
         }
         System.out.println();
-        System.out.println("生成从大到小的迭代器,");
-        System.out.println("从大到小输出treeSet中的元素：");
+        System.out.println("生成从大到小的迭代器," +
+                "从大到小输出treeSet中的元素：");
         Iterator<Integer> descendingIterator = treeSet.descendingIterator();
         while (descendingIterator.hasNext()) {
             System.out.print(descendingIterator.next() + " ");
         }
         System.out.println();
-        System.out.println("生成从大到小的集合,");
-        System.out.println("从大到小输出treeSet中的元素：");
+        System.out.println("生成从大到小的集合," +
+                "从大到小输出treeSet中的元素：");
         NavigableSet<Integer> navigableSet = treeSet.descendingSet();
         Iterator<Integer> descendingSetIterator = navigableSet.iterator();
         while (descendingSetIterator.hasNext()) {
