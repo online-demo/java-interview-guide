@@ -21,8 +21,8 @@ public class HashSetDemo {
         while (iterator.hasNext()) {
             System.out.println(iterator.next());
         }
-        System.out.printf("hashSet中是否包含Andy：%b%n", hashSet.contains("Allen"));
-        System.out.printf("hashSet中删除Andy：%b%n", hashSet.remove("Allen"));
+        System.out.printf("hashSet中是否包含Allen：%b%n", hashSet.contains("Allen"));
+        System.out.printf("hashSet中删除Allen：%b%n", hashSet.remove("Allen"));
         System.out.println("forEach输出hashSet的元素：");
         hashSet.forEach(System.out::println);
     }
