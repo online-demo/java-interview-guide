@@ -21,6 +21,10 @@ public class LinkedHashSetDemo {
         while (iterator.hasNext()) {
             System.out.println(iterator.next());
         }
+        System.out.printf("hashSet中是否包含Allen：%b%n",
+                linkedHashSet.contains("Allen"));
+        System.out.printf("hashSet中删除Allen：%b%n",
+                linkedHashSet.remove("Allen"));
         System.out.println("linkedHashSet中包含的元素是：");
         linkedHashSet.forEach(System.out::println);
     }
