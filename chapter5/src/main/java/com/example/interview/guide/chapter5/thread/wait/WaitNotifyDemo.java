@@ -20,7 +20,9 @@ public class WaitNotifyDemo {
             // 推荐使用推荐使用5.2.4节的线程池管理线程。
             new WaitThread(i + "", lock).start();
         }
+        // 主线程休眠2秒。
         Thread.sleep(2000);
+        System.out.println(printDate() + "主线程休眠2秒");
         // 不推荐直接创建线程。限于篇幅，这里直接创建线程。
         // 推荐使用推荐使用5.2.4节的线程池管理线程。
         new NotifyThread(lock).start();
@@ -91,11 +93,13 @@ public class WaitNotifyDemo {
         }
     }
 
+    /**
+     * 返回当前时间
+     */
     private static String printDate() {
         SimpleDateFormat sdf =
                 new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         return sdf.format(new Date()) + " ";
     }
-
 
 }
