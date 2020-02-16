@@ -1,4 +1,4 @@
-package com.example.interview.guide.chapter5.lock.cyclicbarrier;
+package com.example.interview.guide.chapter6.lock.cyclicbarrier;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

@@ -1,4 +1,4 @@
-package com.example.interview.guide.chapter5.lock.reentrantlock;
+package com.example.interview.guide.chapter6.lock.reentrantlock;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Lock;

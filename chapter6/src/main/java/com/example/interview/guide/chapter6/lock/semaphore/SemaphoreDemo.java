@@ -1,4 +1,4 @@
-package com.example.interview.guide.chapter5.lock.semaphore;
+package com.example.interview.guide.chapter6.lock.semaphore;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

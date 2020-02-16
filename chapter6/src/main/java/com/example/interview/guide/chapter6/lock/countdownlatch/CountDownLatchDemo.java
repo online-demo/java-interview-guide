@@ -1,4 +1,4 @@
-package com.example.interview.guide.chapter5.lock.countdownlatch;
+package com.example.interview.guide.chapter6.lock.countdownlatch;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -23,7 +23,7 @@ public class CountDownLatchDemo {
         ExecutorService executorService = Executors
                 .newFixedThreadPool(2);
         try {
-            // 并发执行看病和排队的任务。
+            // 并发执行购买爆米花和购买电影票的任务。
             executorService.execute(new BuyPopcornTask(countDownLatch));
             executorService.execute(new BuyMovieTicketsTask(countDownLatch));
             // 等待其他线程完成各自的工作后再执

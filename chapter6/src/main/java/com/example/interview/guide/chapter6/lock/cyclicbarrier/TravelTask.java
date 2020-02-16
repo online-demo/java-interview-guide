@@ -1,4 +1,4 @@
-package com.example.interview.guide.chapter5.lock.cyclicbarrier;
+package com.example.interview.guide.chapter6.lock.cyclicbarrier;
 
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;

@@ -112,4 +112,5 @@ public class ReentrantReadWriteLockDemo {
                 new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
         return sdf.format(new Date()) + " ";
     }
+
 }

@@ -1,4 +1,4 @@
-package com.example.interview.guide.chapter5.lock.countdownlatch;
+package com.example.interview.guide.chapter6.lock.countdownlatch;
 
 import java.util.concurrent.CountDownLatch;
 
