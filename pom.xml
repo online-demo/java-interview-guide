@@ -10,6 +10,7 @@
         <module>chapter5</module>
         <module>chapter6</module>
         <module>chapter-7</module>
+        <module>chapter8</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
