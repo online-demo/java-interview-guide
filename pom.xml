@@ -9,7 +9,7 @@
         <module>chapter4</module>
         <module>chapter5</module>
         <module>chapter6</module>
-        <module>chapter-7</module>
+        <module>chapter7</module>
         <module>chapter8</module>
     </modules>
     <parent>
@@ -21,7 +21,6 @@
     <groupId>com.example</groupId>
     <artifactId>java-interview-guide</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <content>java-interview-guide</content>
     <description>Project for Java-Interview-Guide</description>
 
     <properties>
