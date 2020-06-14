@@ -5,13 +5,13 @@ package com.example.interview.guide.chapter3.queue.circle;
  * @Project : java-interview-guide
  * @Date : 2019-06-22 16:01
  * @Version : V1.0
- * @Description : 测试循环链表
+ * @Description : 测试循环队列
  */
 public class CircleQueueDemo {
     public static void main(String[] args) {
         int initialCapacity = 10;
         CircleQueue circleQueue = new CircleQueue(initialCapacity);
-        // 入栈 入栈20个元素，测试栈满的情况
+        // 添加20个元素，测试队列由空到满的情况
         for (int i = 0; i < initialCapacity + initialCapacity; i++) {
             circleQueue.add(i);
         }

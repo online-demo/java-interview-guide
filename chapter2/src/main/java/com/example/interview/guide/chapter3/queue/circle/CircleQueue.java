@@ -7,7 +7,7 @@ import com.example.interview.guide.chapter3.queue.Queue;
  * @Project : java-interview-guide
  * @Date : 2019-06-22 15:52
  * @Version : V1.0
- * @Description : 循环链表实现
+ * @Description : 循环队列实现
  */
 public class CircleQueue implements Queue {
     /**
